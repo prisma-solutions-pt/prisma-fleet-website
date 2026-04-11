@@ -15,11 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PrismaFleet | Gestão de frotas TVDE",
+  title: "Prisma Fleet",
   description:
     "Software de gestão de frotas para operadores TVDE em Portugal. Liquidações automáticas, importação Uber e Bolt, portal de motoristas e muito mais.",
   openGraph: {
-    title: "PrismaFleet | Gestão de frotas TVDE",
+    title: "Prisma Fleet",
     description:
       "Liquidações em minutos, não em horas. O software feito para operadores TVDE.",
     type: "website",
