@@ -3,7 +3,7 @@ import { Waves } from "@/components/ui/wave-background";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <Waves
         strokeColor="rgba(37, 99, 235, 0.07)"
         backgroundColor="transparent"

@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" aria-label="Rodapé do site">
       <div className="footer-top">
         <div className="footer-brand">
-          <img src="/brand/prisma-mark-black.png" alt="" className="footer-brand-mark" />
+          <img src="/brand/prisma-mark-black.png" alt="PrismaFleet" className="footer-brand-mark" />
           <span className="footer-brand-name">PrismaFleet</span>
         </div>
       </div>
@@ -35,7 +35,7 @@ export default function Footer() {
         <div>
           <div className="footer-col-title">Contacto</div>
           <div className="footer-col-links">
-            <span className="footer-col-link">geral@prismasolutions.pt</span>
+            <a href="mailto:geral@prismasolutions.pt" className="footer-col-link">geral@prismasolutions.pt</a>
           </div>
         </div>
       </div>

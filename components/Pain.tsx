@@ -39,7 +39,7 @@ const PAINS = [
 
 export default function Pain() {
   return (
-    <section className="section">
+    <section className="section" id="problema">
       <div className="wrap">
         <ScrollReveal>
           <div className="section-head">

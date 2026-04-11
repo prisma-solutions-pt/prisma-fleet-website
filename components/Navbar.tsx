@@ -51,7 +51,7 @@ export default function Navbar() {
       <div className="navbar-shell">
         <div className="navbar-inner">
           <Link href="/" className="nav-logo">
-            <img src={logoMarkSrc} alt="" className="nav-logo-mark" />
+            <img src={logoMarkSrc} alt="PrismaFleet" className="nav-logo-mark" />
             PrismaFleet
           </Link>
 

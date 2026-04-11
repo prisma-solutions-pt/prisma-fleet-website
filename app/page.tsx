@@ -9,9 +9,132 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
+const softwareJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "PrismaFleet",
+  description:
+    "Software de gestão de frotas TVDE em Portugal. Liquidações automáticas, importação de ficheiros Uber e Bolt, portal do motorista, pagamentos SEPA e dashboard de analytics.",
+  url: "https://www.prismafleet.pt",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  availableOnDevice: "Desktop, Mobile",
+  inLanguage: "pt-PT",
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    offerCount: 3,
+  },
+  featureList: [
+    "Liquidações automáticas",
+    "Importação Uber e Bolt",
+    "Portal do motorista",
+    "Renda fixa e revenue share",
+    "Pagamentos SEPA XML",
+    "Dashboard com KPIs",
+    "Multi-empresa",
+    "Exportação PDF",
+    "CRM integrado",
+    "Gestão de manutenção",
+  ],
+  publisher: {
+    "@type": "Organization",
+    name: "Prisma Solutions",
+    url: "https://www.prismafleet.pt",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.prismafleet.pt/brand/prisma-mark-black.png",
+    },
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "O PrismaFleet é para mim?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Se és operador TVDE em Portugal e alugas carros a motoristas Uber ou Bolt, sim. O PrismaFleet foi feito especificamente para ti, quer tenhas 5 ou 300 veículos.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Posso experimentar sem pagar?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importas os teus dados reais e testas tudo antes de decidir.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Como funciona a importação de dados?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Exportas os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arrastas para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Suportam renda fixa e revenue share?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Podes misturar renda fixa e percentagem na mesma frota.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Os meus motoristas podem ver as liquidações?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sim. Cada motorista recebe acesso ao portal onde vê os ganhos, deduções e valor final de cada semana. Funciona em qualquer telemóvel.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "E se tiver várias empresas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "O PrismaFleet suporta multi-empresa. Geres até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Os meus dados estão seguros?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cada operador tem a sua própria instância isolada com base de dados dedicada. Os dados de um cliente nunca se misturam com os de outro.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Posso cancelar a qualquer momento?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sim. Sem contratos de fidelização. Cancelas quando quiseres e manténs acesso até ao fim do período pago.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Navbar />
       <main>
         <Hero />

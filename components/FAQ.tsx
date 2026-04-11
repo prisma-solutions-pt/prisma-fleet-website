@@ -46,7 +46,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="section">
+    <section className="section" id="faq">
       <div className="wrap">
         <ScrollReveal>
           <div className="section-head">

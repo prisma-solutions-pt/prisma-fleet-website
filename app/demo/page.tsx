@@ -4,8 +4,18 @@ import DemoForm from "@/components/DemoForm";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Pedir Demo | PrismaFleet",
-  description: "Pede uma demonstração do PrismaFleet e vê como podemos simplificar a gestão da tua frota TVDE.",
+  title: "Pedir Demonstração Gratuita",
+  description:
+    "Agende uma demonstração personalizada do PrismaFleet. Veja como automatizar liquidações, importar ficheiros Uber e Bolt e gerir a sua frota TVDE sem Excel. 14 dias grátis, sem cartão de crédito.",
+  alternates: {
+    canonical: "https://www.prismafleet.pt/demo",
+  },
+  openGraph: {
+    title: "Pedir Demonstração Gratuita | PrismaFleet",
+    description:
+      "Agende uma demonstração do software de gestão de frotas TVDE. 14 dias grátis, sem compromisso.",
+    url: "https://www.prismafleet.pt/demo",
+  },
 };
 
 export default function DemoPage() {
