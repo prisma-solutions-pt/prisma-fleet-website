@@ -93,7 +93,7 @@ export default function Hero() {
           </div>
           <div className="screenshot-canvas">
             {/* Replace with: <Image src="/screenshots/dashboard.png" ... /> */}
-            Dashboard screenshot
+            Dashboard screenshot/video
           </div>
         </div>
       </div>

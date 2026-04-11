@@ -14,7 +14,7 @@ function Check() {
 const PLANS = [
   {
     name: "Starter",
-    price: 99,
+    price: "--",
     desc: "Para operadores com frotas até 30 veículos que querem sair do Excel.",
     label: "Plano Starter inclui:",
     features: [
@@ -28,7 +28,7 @@ const PLANS = [
   },
   {
     name: "Pro",
-    price: 249,
+    price: "--",
     desc: "Para operadores em crescimento que precisam de controlo total.",
     label: "Tudo do Starter, mais:",
     features: [
@@ -43,7 +43,7 @@ const PLANS = [
   },
   {
     name: "Enterprise",
-    price: 449,
+    price: "--",
     desc: "Para grandes operadores que precisam de infraestrutura dedicada.",
     label: "Tudo do Pro, mais:",
     features: [
