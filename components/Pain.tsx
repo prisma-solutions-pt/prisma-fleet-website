@@ -44,7 +44,11 @@ export default function Pain() {
         <ScrollReveal>
           <div className="section-head">
             <span className="eyebrow">O problema</span>
-            <h2>Gerir uma frota TVDE não<br />devia ser tão difícil</h2>
+            <h2>
+              Gerir uma frota TVDE não
+              <br />
+              <span className="accent">devia depender de Excel</span>
+            </h2>
             <p className="lead-center">
               Operadores perdem horas todas as semanas em tarefas que deviam ser
               automáticas. E os erros saem caros.

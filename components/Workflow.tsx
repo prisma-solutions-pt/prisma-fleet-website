@@ -30,7 +30,11 @@ export default function Workflow() {
         <ScrollReveal>
           <div className="section-head">
             <span className="eyebrow">Como funciona</span>
-            <h2>De ficheiro a pagamento<br />em 4 passos</h2>
+            <h2>
+              De ficheiro a pagamento
+              <br />
+              <span className="accent">num fluxo de 4 passos</span>
+            </h2>
             <p className="lead-center">
               Um fluxo simples que substitui horas de trabalho manual.
               Todas as semanas, sem falhas.

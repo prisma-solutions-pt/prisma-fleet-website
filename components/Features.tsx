@@ -63,7 +63,11 @@ export default function Features() {
         <ScrollReveal>
           <div className="section-head">
             <span className="eyebrow">Funcionalidades</span>
-            <h2>Tudo o que precisas para<br />gerir a tua frota</h2>
+            <h2>
+              Uma plataforma para
+              <br />
+              <span className="accent">operar a tua frota ponta a ponta</span>
+            </h2>
             <p className="lead-center">
               Do import ao pagamento, uma plataforma completa para operadores
               TVDE. Sem Excel, sem erros, sem stress.
@@ -92,7 +96,7 @@ export default function Features() {
           <div className="feature-card-full">
             <div className="screenshot-frame-light" style={{ aspectRatio: '16/7' }}>
               {/* Replace with full-width dashboard screenshot */}
-              Full dashboard screenshot
+              Full dashboard screenshot/video
             </div>
           </div>
         </ScrollReveal>

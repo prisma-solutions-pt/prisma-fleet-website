@@ -64,7 +64,12 @@ export default function Pricing() {
       <div className="wrap">
         <ScrollReveal>
           <div className="section-head">
-            <h2>Escolhe o plano certo<br />para a tua frota</h2>
+            <span className="eyebrow">Preços</span>
+            <h2>
+              Escolhe o plano certo
+              <br />
+              <span className="accent">para a fase da tua frota</span>
+            </h2>
             <p className="lead-center">
               Todos os planos incluem um <strong>trial gratuito de 14 dias</strong>.
             </p>

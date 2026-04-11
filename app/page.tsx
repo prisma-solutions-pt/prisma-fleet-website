@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ProofStrip from "@/components/ProofStrip";
 import Pain from "@/components/Pain";
 import Features from "@/components/Features";
 import Workflow from "@/components/Workflow";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <ProofStrip />
         <Pain />
         <Features />
         <Workflow />

@@ -47,26 +47,55 @@ export function Waves({
     const noiseRef = useRef<((x: number, y: number) => number) | null>(null)
     const rafRef = useRef<number | null>(null)
     const boundingRef = useRef<DOMRect | null>(null)
+    const finePointerRef = useRef(false)
+    const animateRef = useRef(true)
+    const visibleRef = useRef(true)
+    const lastFrameRef = useRef(0)
 
     useEffect(() => {
         if (!containerRef.current || !svgRef.current) return
 
         noiseRef.current = createNoise2D()
+        finePointerRef.current = window.matchMedia('(pointer: fine)').matches
+        animateRef.current = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
         setSize()
         setLines()
+        drawLines()
 
         window.addEventListener('resize', onResize)
-        window.addEventListener('mousemove', onMouseMove)
-        containerRef.current.addEventListener('touchmove', onTouchMove, { passive: false })
 
-        rafRef.current = requestAnimationFrame(tick)
+        if (finePointerRef.current) {
+            window.addEventListener('mousemove', onMouseMove, { passive: true })
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                visibleRef.current = entry.isIntersecting
+
+                if (visibleRef.current && animateRef.current && rafRef.current === null) {
+                    rafRef.current = requestAnimationFrame(tick)
+                }
+
+                if (!visibleRef.current && rafRef.current !== null) {
+                    cancelAnimationFrame(rafRef.current)
+                    rafRef.current = null
+                }
+            },
+            { threshold: 0.05 }
+        )
+
+        observer.observe(containerRef.current)
+
+        if (animateRef.current) {
+            rafRef.current = requestAnimationFrame(tick)
+        }
 
         return () => {
             if (rafRef.current) cancelAnimationFrame(rafRef.current)
             window.removeEventListener('resize', onResize)
             window.removeEventListener('mousemove', onMouseMove)
-            containerRef.current?.removeEventListener('touchmove', onTouchMove)
+            observer.disconnect()
         }
     }, [])
 
@@ -91,11 +120,11 @@ export function Waves({
         })
         pathsRef.current = []
 
-        const xGap = 8
-        const yGap = 8
+        const xGap = finePointerRef.current ? 18 : 24
+        const yGap = finePointerRef.current ? 16 : 22
 
-        const oWidth = width + 200
-        const oHeight = height + 30
+        const oWidth = width + 120
+        const oHeight = height + 24
 
         const totalLines = Math.ceil(oWidth / xGap)
         const totalPoints = Math.ceil(oHeight / yGap)
@@ -140,13 +169,8 @@ export function Waves({
     }
 
     const onMouseMove = (e: MouseEvent) => {
-        updateMousePosition(e.pageX, e.pageY)
-    }
-
-    const onTouchMove = (e: TouchEvent) => {
-        e.preventDefault()
-        const touch = e.touches[0]
-        updateMousePosition(touch.clientX, touch.clientY)
+        if (!finePointerRef.current) return
+        updateMousePosition(e.clientX, e.clientY)
     }
 
     const updateMousePosition = (x: number, y: number) => {
@@ -154,7 +178,7 @@ export function Waves({
 
         const mouse = mouseRef.current
         mouse.x = x - boundingRef.current.left
-        mouse.y = y - boundingRef.current.top + window.scrollY
+        mouse.y = y - boundingRef.current.top
 
         if (!mouse.set) {
             mouse.sx = mouse.x
@@ -183,35 +207,35 @@ export function Waves({
                 const move = noise(
                     (p.x + time * 0.008) * 0.003,
                     (p.y + time * 0.003) * 0.002
-                ) * 8
+                ) * 7
 
-                p.wave.x = Math.cos(move) * 12
-                p.wave.y = Math.sin(move) * 6
+                p.wave.x = Math.cos(move) * 10
+                p.wave.y = Math.sin(move) * 5
 
                 const dx = p.x - mouse.sx
                 const dy = p.y - mouse.sy
                 const d = Math.hypot(dx, dy)
-                const l = Math.max(175, mouse.vs)
+                const l = Math.max(120, mouse.vs)
 
                 if (d < l) {
                     const s = 1 - d / l
                     const f = Math.cos(d * 0.001) * s
 
-                    p.cursor.vx += Math.cos(mouse.a) * f * l * mouse.vs * 0.00035
-                    p.cursor.vy += Math.sin(mouse.a) * f * l * mouse.vs * 0.00035
+                    p.cursor.vx += Math.cos(mouse.a) * f * l * mouse.vs * 0.00022
+                    p.cursor.vy += Math.sin(mouse.a) * f * l * mouse.vs * 0.00022
                 }
 
-                p.cursor.vx += (0 - p.cursor.x) * 0.01
-                p.cursor.vy += (0 - p.cursor.y) * 0.01
+                p.cursor.vx += (0 - p.cursor.x) * 0.012
+                p.cursor.vy += (0 - p.cursor.y) * 0.012
 
-                p.cursor.vx *= 0.95
-                p.cursor.vy *= 0.95
+                p.cursor.vx *= 0.92
+                p.cursor.vy *= 0.92
 
                 p.cursor.x += p.cursor.vx
                 p.cursor.y += p.cursor.vy
 
-                p.cursor.x = Math.min(50, Math.max(-50, p.cursor.x))
-                p.cursor.y = Math.min(50, Math.max(-50, p.cursor.y))
+                p.cursor.x = Math.min(28, Math.max(-28, p.cursor.x))
+                p.cursor.y = Math.min(28, Math.max(-28, p.cursor.y))
             })
         })
     }
@@ -245,6 +269,18 @@ export function Waves({
     }
 
     const tick = (time: number) => {
+        if (!animateRef.current || !visibleRef.current) {
+            rafRef.current = null
+            return
+        }
+
+        if (time - lastFrameRef.current < 32) {
+            rafRef.current = requestAnimationFrame(tick)
+            return
+        }
+
+        lastFrameRef.current = time
+
         const { current: mouse } = mouseRef
 
         mouse.sx += (mouse.x - mouse.sx) * 0.1
