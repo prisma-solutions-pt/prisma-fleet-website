@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProofStrip from "@/components/ProofStrip";
@@ -9,10 +10,26 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
+export const metadata: Metadata = {
+  title: "Prisma Fleet — Software de Gestão de Frotas TVDE em Portugal",
+  description:
+    "Prisma Fleet é o software de gestão de frotas TVDE feito para operadores em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista e pagamentos SEPA. Experimente grátis durante 14 dias.",
+  alternates: {
+    canonical: "https://www.prismafleet.pt",
+  },
+  openGraph: {
+    title: "Prisma Fleet — Software de Gestão de Frotas TVDE em Portugal",
+    description:
+      "Prisma Fleet: liquidações em minutos, não em horas. Importação Uber e Bolt, portal do motorista e pagamentos SEPA. O software feito para operadores TVDE em Portugal.",
+    url: "https://www.prismafleet.pt",
+  },
+};
+
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "PrismaFleet",
+  name: "Prisma Fleet",
+  alternateName: "PrismaFleet",
   description:
     "Software de gestão de frotas TVDE em Portugal. Liquidações automáticas, importação de ficheiros Uber e Bolt, portal do motorista, pagamentos SEPA e dashboard de analytics.",
   url: "https://www.prismafleet.pt",
@@ -41,7 +58,7 @@ const softwareJsonLd = {
   publisher: {
     "@type": "Organization",
     name: "Prisma Solutions",
-    url: "https://www.prismafleet.pt",
+    url: "https://www.prismasolutions.pt",
     logo: {
       "@type": "ImageObject",
       url: "https://www.prismafleet.pt/brand/prisma-mark-black.png",
@@ -55,10 +72,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "O PrismaFleet é para mim?",
+      name: "O Prisma Fleet é para mim?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Se és operador TVDE em Portugal e alugas carros a motoristas Uber ou Bolt, sim. O PrismaFleet foi feito especificamente para ti, quer tenhas 5 ou 300 veículos.",
+        text: "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O Prisma Fleet foi feito especificamente para si, quer tenha 5 ou 300 veículos.",
       },
     },
     {
@@ -66,7 +83,7 @@ const faqJsonLd = {
       name: "Posso experimentar sem pagar?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importas os teus dados reais e testas tudo antes de decidir.",
+        text: "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importa os seus dados reais e testa tudo antes de decidir.",
       },
     },
     {
@@ -74,7 +91,7 @@ const faqJsonLd = {
       name: "Como funciona a importação de dados?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Exportas os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arrastas para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos.",
+        text: "Exporte os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arraste para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos.",
       },
     },
     {
@@ -82,7 +99,7 @@ const faqJsonLd = {
       name: "Suportam renda fixa e revenue share?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Podes misturar renda fixa e percentagem na mesma frota.",
+        text: "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Pode misturar renda fixa e percentagem na mesma frota.",
       },
     },
     {
@@ -98,7 +115,7 @@ const faqJsonLd = {
       name: "E se tiver várias empresas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O PrismaFleet suporta multi-empresa. Geres até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
+        text: "O Prisma Fleet suporta multi-empresa. Gira até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
       },
     },
     {
@@ -114,7 +131,7 @@ const faqJsonLd = {
       name: "Posso cancelar a qualquer momento?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. Sem contratos de fidelização. Cancelas quando quiseres e manténs acesso até ao fim do período pago.",
+        text: "Sim. Sem contratos de fidelização. Cancele quando quiser e mantém acesso até ao fim do período pago.",
       },
     },
   ],

@@ -18,12 +18,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.prismafleet.pt"),
   title: {
     default:
-      "Software de Gestão de Frotas TVDE em Portugal | PrismaFleet",
-    template: "%s | PrismaFleet",
+      "Prisma Fleet — Software de Gestão de Frotas TVDE em Portugal",
+    template: "%s | Prisma Fleet",
   },
   description:
-    "Liquidações automáticas para operadores TVDE. Importação Uber e Bolt, renda fixa ou revenue share, portal do motorista e pagamentos SEPA. Experimente grátis durante 14 dias.",
+    "Prisma Fleet é o software de gestão de frotas TVDE feito para operadores em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista e pagamentos SEPA. Experimente grátis durante 14 dias.",
   keywords: [
+    "Prisma Fleet",
+    "PrismaFleet",
     "software TVDE",
     "gestão de frotas TVDE",
     "software gestão frotas TVDE Portugal",
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     "pagamentos SEPA motoristas",
     "gestão frota Uber Bolt Portugal",
   ],
-  applicationName: "PrismaFleet",
+  applicationName: "Prisma Fleet",
   creator: "Prisma Solutions",
   publisher: "Prisma Solutions",
   alternates: {
@@ -55,11 +57,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "PrismaFleet — Software de Gestão de Frotas TVDE",
+    title: "Prisma Fleet — Software de Gestão de Frotas TVDE",
     description:
-      "Liquidações em minutos, não em horas. Importação Uber e Bolt, portal do motorista e pagamentos SEPA. O software feito para operadores TVDE em Portugal.",
+      "Prisma Fleet: liquidações em minutos, não em horas. Importação Uber e Bolt, portal do motorista e pagamentos SEPA. O software feito para operadores TVDE em Portugal.",
     url: "https://www.prismafleet.pt",
-    siteName: "PrismaFleet",
+    siteName: "Prisma Fleet",
     type: "website",
     locale: "pt_PT",
     images: [
@@ -67,15 +69,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "PrismaFleet — Software de Gestão de Frotas TVDE em Portugal",
+        alt: "Prisma Fleet — Software de Gestão de Frotas TVDE em Portugal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PrismaFleet — Software de Gestão de Frotas TVDE",
+    title: "Prisma Fleet — Software de Gestão de Frotas TVDE",
     description:
-      "Liquidações automáticas, importação Uber e Bolt, portal do motorista. Experimente grátis.",
+      "Prisma Fleet: liquidações automáticas, importação Uber e Bolt, portal do motorista. Experimente grátis.",
     images: ["/og-image.png"],
   },
 };
@@ -87,10 +89,40 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="pt"
+      lang="pt-PT"
       className={`${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Prisma Fleet",
+              alternateName: "PrismaFleet",
+              url: "https://www.prismafleet.pt",
+              logo: "https://www.prismafleet.pt/brand/prisma-mark-black.png",
+              description:
+                "Prisma Fleet é o software de gestão de frotas TVDE feito para operadores em Portugal.",
+              parentOrganization: {
+                "@type": "Organization",
+                name: "Prisma Solutions",
+                url: "https://www.prismasolutions.pt",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "geral@prismasolutions.pt",
+                contactType: "customer support",
+                areaServed: "PT",
+                availableLanguage: "Portuguese",
+              },
+              areaServed: "PT",
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

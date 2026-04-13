@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="hero-content">
         <div className="hero-enter hero-enter-1">
-          <span className="eyebrow eyebrow-dark">Gestão de frotas TVDE</span>
+          <span className="eyebrow eyebrow-dark">Prisma Fleet — Gestão de frotas TVDE</span>
         </div>
 
         <h1 className="hero-enter hero-enter-2">
@@ -22,8 +22,8 @@ export default function Hero() {
         </h1>
 
         <p className="lead hero-enter hero-enter-3">
-          O software que substitui as folhas de Excel, elimina erros de cálculo
-          e dá aos seus motoristas um portal com o seu extrato.
+          Prisma Fleet é o software que substitui as folhas de Excel, elimina
+          erros de cálculo e dê aos seus motoristas um portal com o extrato deles.
         </p>
 
         <div className="hero-facts hero-enter hero-enter-4">
