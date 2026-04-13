@@ -28,8 +28,8 @@ export default function Footer() {
         <div>
           <div className="footer-col-title">Legal</div>
           <div className="footer-col-links">
-            <span className="footer-col-link">Política de Privacidade</span>
-            <span className="footer-col-link">Termos de Serviço</span>
+            <Link href="/privacidade" className="footer-col-link">Política de Privacidade</Link>
+            <Link href="/termos" className="footer-col-link">Termos de Serviço</Link>
           </div>
         </div>
         <div>

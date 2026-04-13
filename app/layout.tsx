@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   publisher: "Prisma Solutions",
   alternates: {
     canonical: "https://www.prismafleet.pt",
+    languages: {
+      "pt-PT": "https://www.prismafleet.pt",
+    },
   },
   robots: {
     index: true,

@@ -14,7 +14,7 @@ The site has a solid SEO foundation: structured data (Organization, SoftwareAppl
 | Priority | Issues |
 |----------|--------|
 | ~~Critical~~ | ~~3~~ 0 (all fixed) |
-| High | 6 |
+| High | 6 >> 3 remaining (H1, H2, H3 fixed) |
 | Medium | 6 |
 | Low | 4 |
 
@@ -93,7 +93,7 @@ Additionally, there is no `<link rel="preload" as="video" href="/hero-video.mp4"
 
 ## High-Priority Issues
 
-### H1. No `hreflang` tag for Portuguese
+### ~~H1. No `hreflang` tag for Portuguese~~ FIXED
 
 **Problem:** Although `<html lang="pt-PT">` is set correctly, there is no `<link rel="alternate" hreflang="pt-PT">` self-referencing tag. Google recommends a self-referencing hreflang even for single-language sites to avoid ambiguity, especially when the TLD is `.pt` and the content targets specifically Portugal (not Brazil, which uses `pt-BR`).
 
@@ -111,7 +111,7 @@ alternates: {
 
 ---
 
-### H2. H1 tag lacks primary keywords
+### ~~H2. H1 tag lacks primary keywords~~ FIXED
 
 **Problem:** The H1 is `"Liquidacoes em minutos."` (26 chars). While provocative, it contains neither the brand name ("Prisma Fleet") nor the primary keyword cluster ("software TVDE", "gestao de frotas TVDE", "operadores TVDE"). Search engines give significant weight to H1 text for ranking.
 
@@ -128,7 +128,7 @@ Or use a `<span class="sr-only">` technique to add keyword context for crawlers 
 
 ---
 
-### H3. Legal pages are `<span>` placeholders, not links
+### ~~H3. Legal pages are `<span>` placeholders, not links~~ FIXED
 
 **Problem:** The footer's "Politica de Privacidade" and "Termos de Servico" are rendered as `<span>` elements, not `<a>` links. They don't link to actual pages. This is a legal requirement under Portuguese law/GDPR and a trust signal for both users and Google.
 
@@ -388,9 +388,9 @@ Or add it as a trust badge near the CTA.
 | OG locale | PASS | `pt_PT` (fixed) |
 | Twitter card | PASS | `summary_large_image` |
 | Twitter image | PASS | Absolute URL to og-image.png |
-| Hreflang | FAIL | No self-referencing `pt-PT` hreflang |
+| Hreflang | PASS | Self-referencing `pt-PT` hreflang (fixed) |
 | H1 count | PASS | Single H1 |
-| H1 keywords | WARN | No primary keywords in H1 text |
+| H1 keywords | PASS | Keywords added via sr-only span (fixed) |
 | Heading hierarchy | PASS | H1 > H2 > H3 logical structure |
 | Image alt tags | PASS | Both logo images have `alt="PrismaFleet"` |
 | JSON-LD Organization | PASS | Name, logo, contactPoint, areaServed |
@@ -419,7 +419,7 @@ Or add it as a trust badge near the CTA.
 | Pricing content | WARN | Shows "EUR --" placeholder |
 | Social proof | FAIL | No testimonials, logos or metrics |
 | CTA text | PASS | Descriptive ("Pedir Demo", "Comecar trial", "Ver funcionalidades") |
-| Legal pages | FAIL | `<span>` placeholders, not links to real pages |
+| Legal pages | PASS | `/privacidade` and `/termos` pages with Link elements (fixed) |
 
 ### Indexability
 

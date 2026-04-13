@@ -27,6 +27,9 @@ export default function VideoHero() {
             Liquidações em minutos.
             <br />
             <span className="accent-light">Não em horas.</span>
+            <span className="sr-only">
+              {" "}Software de gestão de frotas TVDE em Portugal.
+            </span>
           </h1>
 
           <p className="vhero-lead vhero-enter vhero-enter-3">
