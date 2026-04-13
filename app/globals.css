@@ -1785,7 +1785,7 @@ ul { list-style: none; }
   .vhero-content { padding: 120px var(--content-pad) 80px; }
   .vhero-text h1 { font-size: 2.2rem; }
   .vhero-lead { font-size: 1.05rem; }
-  .vhero-actions { flex-direction: column; }
+  .vhero-actions { flex-wrap: wrap; }
   .vhero-scroll { bottom: 24px; }
   .hero { padding: 64px 0 64px; }
   .hero::before { bottom: 34px; width: min(92vw, 720px); }
