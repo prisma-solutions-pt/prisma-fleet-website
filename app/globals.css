@@ -1979,3 +1979,23 @@ ul { list-style: none; }
 .section a:hover {
   opacity: 0.8;
 }
+
+.pricing-card a.btn,
+.cta-actions a.btn {
+  text-decoration: none;
+}
+
+.pricing-card a.btn:hover,
+.cta-actions a.btn:hover {
+  opacity: 1;
+}
+
+.pricing-card a.btn-primary,
+.cta-actions a.btn-primary,
+.cta-actions a.btn-ghost-dark {
+  color: #fff;
+}
+
+.pricing-card a.btn-ghost {
+  color: var(--accent);
+}

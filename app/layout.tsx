@@ -95,9 +95,6 @@ export default function RootLayout({
       lang="pt-PT"
       className={`${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        <link rel="preload" as="image" href="/hero-poster.png" />
-      </head>
       <body>
         <script
           type="application/ld+json"
