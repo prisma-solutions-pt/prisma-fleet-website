@@ -18,14 +18,7 @@ export default function Navbar() {
     }
 
     const onScroll = () => {
-      const proofStrip = document.querySelector(".proof-strip");
-
-      if (!(proofStrip instanceof HTMLElement)) {
-        setScrolled(window.scrollY > 32);
-        return;
-      }
-
-      setScrolled(proofStrip.getBoundingClientRect().top <= 96);
+      setScrolled(window.scrollY > 10);
     };
 
     onScroll();

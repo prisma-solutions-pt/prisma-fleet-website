@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Waves } from "@/components/ui/wave-background";
 
 export default function Hero() {
@@ -11,37 +10,13 @@ export default function Hero() {
       />
 
       <div className="hero-content">
-        <div className="hero-enter hero-enter-1">
-          <span className="eyebrow eyebrow-dark">Prisma Fleet — Gestão de frotas TVDE</span>
-        </div>
-
-        <h1 className="hero-enter hero-enter-2">
-          Liquidações em minutos.
-          <br />
-          <span className="accent-light">Não em horas.</span>
-        </h1>
-
-        <p className="lead hero-enter hero-enter-3">
-          Prisma Fleet é o software que substitui as folhas de Excel, elimina
-          erros de cálculo e dê aos seus motoristas um portal com o extrato deles.
-        </p>
-
-        <div className="hero-facts hero-enter hero-enter-4">
+        <div className="hero-facts hero-enter hero-enter-1">
           <span>Feito para operadores TVDE em Portugal</span>
           <span>Renda fixa ou revenue share</span>
           <span>Importação Uber, Bolt, Via Verde e Prio</span>
         </div>
 
-        <div className="hero-actions hero-enter hero-enter-5">
-          <Link href="/demo" className="btn btn-primary btn-arrow">
-            Começar trial gratuito
-          </Link>
-          <a href="#funcionalidades" className="btn btn-ghost-dark">
-            Ver funcionalidades
-          </a>
-        </div>
-
-        <div className="hero-props hero-enter hero-enter-6">
+        <div className="hero-props hero-enter hero-enter-2">
           <a href="#funcionalidades" className="hero-prop">
             <div className="hero-prop-icon">
               <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
@@ -79,26 +54,26 @@ export default function Hero() {
             </div>
           </a>
         </div>
-      </div>
 
-      <div className="hero-screenshot-wrap hero-enter hero-enter-6">
-        <div className="screenshot-frame">
-          <div className="screenshot-toolbar">
-            <div className="screenshot-dots">
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="screenshot-toolbar-pill">Dashboard semanal</div>
-          </div>
-          <div className="screenshot-canvas">
-            {/* Replace with: <Image src="/screenshots/dashboard.png" ... /> */}
-            <div className="placeholder-soon">
-              <div className="placeholder-soon-icon">
-                <svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+        <div className="hero-screenshot-wrap hero-enter hero-enter-3">
+          <div className="screenshot-frame">
+            <div className="screenshot-toolbar">
+              <div className="screenshot-dots">
+                <span />
+                <span />
+                <span />
               </div>
-              <span className="placeholder-soon-label">Em breve</span>
-              <span className="placeholder-soon-sub">Demo do dashboard em vídeo</span>
+              <div className="screenshot-toolbar-pill">Dashboard semanal</div>
+            </div>
+            <div className="screenshot-canvas">
+              {/* Replace with: <Image src="/screenshots/dashboard.png" ... /> */}
+              <div className="placeholder-soon">
+                <div className="placeholder-soon-icon">
+                  <svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </div>
+                <span className="placeholder-soon-label">Em breve</span>
+                <span className="placeholder-soon-sub">Demo do dashboard em vídeo</span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import VideoHero from "@/components/VideoHero";
 import Hero from "@/components/Hero";
 import ProofStrip from "@/components/ProofStrip";
 import Pain from "@/components/Pain";
@@ -11,14 +12,14 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Prisma Fleet — Software de Gestão de Frotas TVDE em Portugal",
+  title: "Prisma Fleet | Software de Gestão de Frotas TVDE em Portugal",
   description:
     "Prisma Fleet é o software de gestão de frotas TVDE feito para operadores em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista e pagamentos SEPA. Experimente grátis durante 14 dias.",
   alternates: {
     canonical: "https://www.prismafleet.pt",
   },
   openGraph: {
-    title: "Prisma Fleet — Software de Gestão de Frotas TVDE em Portugal",
+    title: "Prisma Fleet | Software de Gestão de Frotas TVDE em Portugal",
     description:
       "Prisma Fleet: liquidações em minutos, não em horas. Importação Uber e Bolt, portal do motorista e pagamentos SEPA. O software feito para operadores TVDE em Portugal.",
     url: "https://www.prismafleet.pt",
@@ -154,6 +155,7 @@ export default function Home() {
       />
       <Navbar />
       <main>
+        <VideoHero />
         <Hero />
         <ProofStrip />
         <Pain />
