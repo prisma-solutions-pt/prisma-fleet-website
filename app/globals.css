@@ -415,6 +415,13 @@ ul { list-style: none; }
     radial-gradient(circle at 50% 12%, rgba(37, 99, 235, 0.12), transparent 24%),
     url("/hero-poster.png") center / cover no-repeat;
   transform: scale(1.02);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--smooth);
+}
+
+.vhero-poster.is-visible {
+  opacity: 1;
 }
 
 .vhero-video {

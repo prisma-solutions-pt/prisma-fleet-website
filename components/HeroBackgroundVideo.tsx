@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export default function HeroBackgroundVideo() {
   const ref = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showPoster, setShowPoster] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
@@ -25,7 +26,6 @@ export default function HeroBackgroundVideo() {
       video.setAttribute("muted", "");
       video.setAttribute("playsinline", "");
       video.setAttribute("webkit-playsinline", "true");
-
     };
 
     const attemptPlay = () => {
@@ -36,15 +36,23 @@ export default function HeroBackgroundVideo() {
         playPromise
           .then(() => {
             setIsPlaying(true);
+            setShowPoster(false);
           })
           .catch(() => {
             setIsPlaying(false);
+            setShowPoster(true);
           });
       }
     };
 
-    const onPlaying = () => setIsPlaying(true);
-    const onPause = () => setIsPlaying(false);
+    const onPlaying = () => {
+      setIsPlaying(true);
+      setShowPoster(false);
+    };
+
+    const onPause = () => {
+      setIsPlaying(false);
+    };
 
     const onVisibilityChange = () => {
       if (document.visibilityState === "visible") {
@@ -86,7 +94,10 @@ export default function HeroBackgroundVideo() {
 
   return (
     <>
-      <div className="vhero-poster" aria-hidden="true" />
+      <div
+        className={`vhero-poster${showPoster && !isPlaying ? " is-visible" : ""}`}
+        aria-hidden="true"
+      />
       <video
         ref={ref}
         className={`vhero-video${isPlaying ? " is-visible" : ""}`}
