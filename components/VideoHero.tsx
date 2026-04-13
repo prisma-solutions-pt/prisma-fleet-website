@@ -1,19 +1,10 @@
 import Link from "next/link";
+import HeroBackgroundVideo from "./HeroBackgroundVideo";
 
 export default function VideoHero() {
   return (
     <section className="vhero">
-      <video
-        className="vhero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster=""
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+      <HeroBackgroundVideo />
 
       <div className="vhero-overlay" />
 
