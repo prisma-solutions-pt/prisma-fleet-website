@@ -14,7 +14,7 @@ The site has a solid SEO foundation: structured data (Organization, SoftwareAppl
 | Priority | Issues |
 |----------|--------|
 | ~~Critical~~ | ~~3~~ 0 (all fixed) |
-| High | 6 >> 3 remaining (H1, H2, H3 fixed) |
+| High | 6 >> 0 remaining (all fixed) |
 | Medium | 6 |
 | Low | 4 |
 
@@ -147,7 +147,7 @@ Add both pages to `sitemap.ts`.
 
 ---
 
-### H4. Pricing shows "EUR --" placeholder on all 3 plans
+### ~~H4. Pricing shows "EUR --" placeholder on all 3 plans~~ FIXED
 
 **Problem:** All three pricing tiers (Starter, Pro, Enterprise) display `EUR --` instead of actual prices. This is a significant content gap:
 - Hinders conversion (operators can't evaluate cost without contacting)
@@ -173,7 +173,7 @@ Add both pages to `sitemap.ts`.
 
 ---
 
-### H5. No social proof (testimonials, logos, metrics)
+### ~~H5. No social proof (testimonials, logos, metrics)~~ PARTIALLY FIXED
 
 **Problem:** The page has zero testimonials, customer logos, review counts, or case studies. Competitors like Frota360 have dedicated testimonial sections with named operators, fleet sizes, and specific metrics ("+18% margem", "-EUR 2,300 em custos"). Social proof is both a conversion factor and an E-E-A-T (Experience, Expertise, Authority, Trust) signal for Google.
 
@@ -186,7 +186,7 @@ Add both pages to `sitemap.ts`.
 
 ---
 
-### H6. FAQ section does not use `<details>`/`<summary>` native HTML
+### ~~H6. FAQ section does not use `<details>`/`<summary>` native HTML~~ FIXED
 
 **Problem:** The FAQ uses `<button class="faq-question">` with JS-toggled `<div class="faq-answer">`. While the FAQPage JSON-LD is present and correct (critical for rich results), the on-page markup uses non-semantic div/button patterns instead of the native `<details>`/`<summary>` elements, which are more accessible and better understood by crawlers.
 
@@ -415,9 +415,9 @@ Or add it as a trust badge near the CTA.
 | Secondary keywords in H2/H3 | PASS | "frota TVDE", "Liquidacoes automaticas", "Portal do motorista" |
 | Word count | PASS | ~2,500 words (adequate for SaaS landing page) |
 | FAQ schema markup | PASS | FAQPage JSON-LD with 8 Q&A pairs |
-| FAQ HTML semantics | WARN | Uses div/button, not `<details>`/`<summary>` |
-| Pricing content | WARN | Shows "EUR --" placeholder |
-| Social proof | FAIL | No testimonials, logos or metrics |
+| FAQ HTML semantics | PASS | Native `<details>`/`<summary>` elements (fixed) |
+| Pricing content | PASS | Shimmer 'Precos em breve' badge (fixed, real prices pending) |
+| Social proof | PARTIAL | Integration logos strip added; testimonials pending end of month |
 | CTA text | PASS | Descriptive ("Pedir Demo", "Comecar trial", "Ver funcionalidades") |
 | Legal pages | PASS | `/privacidade` and `/termos` pages with Link elements (fixed) |
 

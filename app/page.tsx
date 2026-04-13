@@ -9,6 +9,7 @@ import Workflow from "@/components/Workflow";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import IntegrationStrip from "@/components/IntegrationStrip";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -173,6 +174,7 @@ export default function Home() {
         <Features />
         <Workflow />
         <Pricing />
+        <IntegrationStrip />
         <FAQ />
         <CTA />
       </main>

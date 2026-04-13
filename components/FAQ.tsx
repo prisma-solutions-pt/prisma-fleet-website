@@ -1,12 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const QUESTIONS = [
   {
-    q: "O PrismaFleet é para mim?",
-    a: "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O PrismaFleet foi feito especificamente para si, quer tenha 5 ou 300 veículos.",
+    q: "O Prisma Fleet é para mim?",
+    a: "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O Prisma Fleet foi feito especificamente para si, quer tenha 5 ou 300 veículos.",
   },
   {
     q: "Posso experimentar sem pagar?",
@@ -26,7 +23,7 @@ const QUESTIONS = [
   },
   {
     q: "E se tiver várias empresas?",
-    a: "O PrismaFleet suporta multi-empresa. Gira até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
+    a: "O Prisma Fleet suporta multi-empresa. Gira até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
   },
   {
     q: "Os meus dados estão seguros?",
@@ -39,12 +36,6 @@ const QUESTIONS = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (i: number) => {
-    setOpenIndex(openIndex === i ? null : i);
-  };
-
   return (
     <section className="section" id="faq">
       <div className="wrap">
@@ -58,24 +49,17 @@ export default function FAQ() {
         <ScrollReveal>
           <div className="faq-grid">
             {QUESTIONS.map((item, i) => (
-              <div
-                key={i}
-                className={`faq-item${openIndex === i ? " open" : ""}`}
-              >
-                <button
-                  className="faq-question"
-                  onClick={() => toggle(i)}
-                  type="button"
-                >
+              <details key={i} className="faq-item">
+                <summary className="faq-question">
                   {item.q}
                   <svg className="faq-chevron" viewBox="0 0 24 24">
                     <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </button>
+                </summary>
                 <div className="faq-answer">
                   <div className="faq-answer-inner">{item.a}</div>
                 </div>
-              </div>
+              </details>
             ))}
           </div>
         </ScrollReveal>

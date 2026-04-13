@@ -14,7 +14,7 @@ function Check() {
 const PLANS = [
   {
     name: "Starter",
-    price: "--",
+    price: null as string | null,
     desc: "Para operadores com frotas até 30 veículos que querem sair do Excel.",
     label: "Plano Starter inclui:",
     features: [
@@ -28,7 +28,7 @@ const PLANS = [
   },
   {
     name: "Pro",
-    price: "--",
+    price: null as string | null,
     desc: "Para operadores em crescimento que precisam de controlo total.",
     label: "Tudo do Starter, mais:",
     features: [
@@ -43,7 +43,7 @@ const PLANS = [
   },
   {
     name: "Enterprise",
-    price: "--",
+    price: null as string | null,
     desc: "Para grandes operadores que precisam de infraestrutura dedicada.",
     label: "Tudo do Pro, mais:",
     features: [
@@ -86,11 +86,22 @@ export default function Pricing() {
                 <div className="pricing-name">{plan.name}</div>
                 <p className="pricing-desc">{plan.desc}</p>
 
-                <div className="pricing-amount">
-                  <span className="pricing-currency">EUR</span>
-                  <span className="pricing-value">{plan.price}</span>
-                </div>
-                <div className="pricing-period">/ mês</div>
+                {plan.price ? (
+                  <>
+                    <div className="pricing-amount">
+                      <span className="pricing-currency">EUR</span>
+                      <span className="pricing-value">{plan.price}</span>
+                    </div>
+                    <div className="pricing-period">/ mês</div>
+                  </>
+                ) : (
+                  <div className="pricing-soon">
+                    <span className="pricing-soon-badge">
+                      <span className="pricing-soon-shimmer" />
+                      Preços em breve
+                    </span>
+                  </div>
+                )}
 
                 <Link
                   href="/demo"
