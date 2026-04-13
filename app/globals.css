@@ -423,7 +423,7 @@ ul { list-style: none; }
   width: 100%;
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 160px var(--content-pad) 200px;
+  padding: 160px var(--content-pad) 100px;
 }
 
 .vhero-text {
