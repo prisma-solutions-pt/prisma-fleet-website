@@ -3,23 +3,23 @@ import ScrollReveal from "./ScrollReveal";
 const STEPS = [
   {
     num: "01",
-    title: "Importa",
-    desc: "Arrasta os ficheiros do Uber, Bolt, Via Verde e Prio para a plataforma.",
+    title: "Importe",
+    desc: "Arraste os ficheiros do Uber, Bolt, Via Verde e Prio para a plataforma.",
   },
   {
     num: "02",
-    title: "Calcula",
+    title: "Calcule",
     desc: "O sistema gera as liquidações automaticamente com todos os descontos.",
   },
   {
     num: "03",
-    title: "Aprova",
-    desc: "Revisa os valores, ajusta o que for preciso e aprova cada liquidação.",
+    title: "Aprove",
+    desc: "Revise os valores, ajuste o que for preciso e aprove cada liquidação.",
   },
   {
     num: "04",
-    title: "Paga",
-    desc: "Gera o ficheiro SEPA, envia para o banco e marca como pago.",
+    title: "Pague",
+    desc: "Gere o ficheiro SEPA, envie para o banco e marque como pago.",
   },
 ];
 

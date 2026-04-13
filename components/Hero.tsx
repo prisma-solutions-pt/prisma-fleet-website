@@ -23,7 +23,7 @@ export default function Hero() {
 
         <p className="lead hero-enter hero-enter-3">
           O software que substitui as folhas de Excel, elimina erros de cálculo
-          e dá aos teus motoristas um portal com o extrato deles.
+          e dá aos seus motoristas um portal com o seu extrato.
         </p>
 
         <div className="hero-facts hero-enter hero-enter-4">
@@ -51,7 +51,7 @@ export default function Hero() {
               <span className="hero-prop-arrow">{"\u2192"}</span>
             </div>
             <div className="hero-prop-desc">
-              Arrasta ficheiros Uber, Bolt, Via Verde e Prio. O resto é automático.
+              Arraste ficheiros Uber, Bolt, Via Verde e Prio. O resto é automático.
             </div>
           </a>
           <a href="#como-funciona" className="hero-prop">
@@ -93,7 +93,13 @@ export default function Hero() {
           </div>
           <div className="screenshot-canvas">
             {/* Replace with: <Image src="/screenshots/dashboard.png" ... /> */}
-            Dashboard screenshot/video
+            <div className="placeholder-soon">
+              <div className="placeholder-soon-icon">
+                <svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+              </div>
+              <span className="placeholder-soon-label">Em breve</span>
+              <span className="placeholder-soon-sub">Demo do dashboard em vídeo</span>
+            </div>
           </div>
         </div>
       </div>

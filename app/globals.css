@@ -949,6 +949,70 @@ ul { list-style: none; }
   aspect-ratio: 16/7;
 }
 
+/* ── Screenshot placeholder (live site, assets pending) ── */
+.placeholder-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  user-select: none;
+}
+
+.placeholder-soon-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.04));
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-soon-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.placeholder-soon-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.placeholder-soon-sub {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 220px;
+}
+
+/* dark variant (hero) */
+.screenshot-canvas .placeholder-soon-icon {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.05));
+  border-color: rgba(96, 165, 250, 0.18);
+}
+
+.screenshot-canvas .placeholder-soon-icon svg {
+  stroke: #60a5fa;
+}
+
+.screenshot-canvas .placeholder-soon-label {
+  color: #60a5fa;
+}
+
+.screenshot-canvas .placeholder-soon-sub {
+  color: #5b6c86;
+}
+
 /* ── Compact feature list (3-col, icon + text) ── */
 .feature-list {
   display: grid;

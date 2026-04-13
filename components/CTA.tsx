@@ -9,12 +9,12 @@ export default function CTA() {
           <div className="cta-dark-inner">
             <span className="eyebrow eyebrow-dark">Começar agora</span>
             <h2>
-              Deixa o Excel para trás
+              Deixe o Excel para trás
               <br />
-              <span className="accent-light">e fecha cada semana com controlo</span>
+              <span className="accent-light">e feche cada semana com controlo</span>
             </h2>
             <p className="lead-center">
-              Experimenta o PrismaFleet durante 14 dias sem compromisso.
+              Experimente o PrismaFleet durante 14 dias sem compromisso.
               Sem cartão de crédito, sem complicações.
             </p>
             <div className="cta-actions">

@@ -27,10 +27,10 @@ export default function DemoPage() {
           <div className="demo-grid">
             <div>
               <span className="eyebrow">Pedir demonstração</span>
-              <h1 style={{ marginBottom: "16px" }}>Vê o PrismaFleet<br />em ação</h1>
+              <h1 style={{ marginBottom: "16px" }}>Veja o PrismaFleet<br />em ação</h1>
               <p className="lead">
-                Preenche o formulário e agendamos uma demonstração personalizada
-                para a tua operação. Sem compromisso, sem cartão de crédito.
+                Preencha o formulário e agendamos uma demonstração personalizada
+                para a sua operação. Sem compromisso, sem cartão de crédito.
               </p>
 
               <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -39,7 +39,7 @@ export default function DemoPage() {
                     Resposta em menos de 24 horas
                   </div>
                   <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    A equipa entra em contacto contigo no dia útil seguinte.
+                    A equipa entra em contacto consigo no dia útil seguinte.
                   </div>
                 </div>
                 <div className="demo-benefit">
@@ -47,7 +47,7 @@ export default function DemoPage() {
                     Demo personalizada
                   </div>
                   <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    Mostramos a plataforma com dados adaptados ao tamanho da tua frota.
+                    Mostramos a plataforma com dados adaptados ao tamanho da sua frota.
                   </div>
                 </div>
                 <div className="demo-benefit">
@@ -55,7 +55,7 @@ export default function DemoPage() {
                     14 dias de trial gratuito
                   </div>
                   <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    Depois da demo, experimentas com os teus dados reais durante 2 semanas.
+                    Depois da demo, experimente com os seus dados reais durante 2 semanas.
                   </div>
                 </div>
               </div>

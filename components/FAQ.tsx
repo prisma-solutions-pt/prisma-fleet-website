@@ -6,19 +6,19 @@ import ScrollReveal from "./ScrollReveal";
 const QUESTIONS = [
   {
     q: "O PrismaFleet é para mim?",
-    a: "Se és operador TVDE em Portugal e alugas carros a motoristas Uber ou Bolt, sim. O PrismaFleet foi feito especificamente para ti, quer tenhas 5 ou 300 veículos.",
+    a: "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O PrismaFleet foi feito especificamente para si, quer tenha 5 ou 300 veículos.",
   },
   {
     q: "Posso experimentar sem pagar?",
-    a: "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importas os teus dados reais e testas tudo antes de decidir.",
+    a: "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importa os seus dados reais e testa tudo antes de decidir.",
   },
   {
     q: "Como funciona a importação de dados?",
-    a: "Exportas os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arrastas para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos.",
+    a: "Exporte os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arraste para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos.",
   },
   {
     q: "Suportam renda fixa e revenue share?",
-    a: "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Podes misturar renda fixa e percentagem na mesma frota.",
+    a: "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Pode misturar renda fixa e percentagem na mesma frota.",
   },
   {
     q: "Os meus motoristas podem ver as liquidações?",
@@ -26,7 +26,7 @@ const QUESTIONS = [
   },
   {
     q: "E se tiver várias empresas?",
-    a: "O PrismaFleet suporta multi-empresa. Geres até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
+    a: "O PrismaFleet suporta multi-empresa. Gira até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
   },
   {
     q: "Os meus dados estão seguros?",
@@ -34,7 +34,7 @@ const QUESTIONS = [
   },
   {
     q: "Posso cancelar a qualquer momento?",
-    a: "Sim. Sem contratos de fidelização. Cancelas quando quiseres e manténs acesso até ao fim do período pago.",
+    a: "Sim. Sem contratos de fidelização. Cancele quando quiser e mantém acesso até ao fim do período pago.",
   },
 ];
 

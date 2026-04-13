@@ -66,9 +66,9 @@ export default function Pricing() {
           <div className="section-head">
             <span className="eyebrow">Preços</span>
             <h2>
-              Escolhe o plano certo
+              Escolha o plano certo
               <br />
-              <span className="accent">para a fase da tua frota</span>
+              <span className="accent">para a fase da sua frota</span>
             </h2>
             <p className="lead-center">
               Todos os planos incluem um <strong>trial gratuito de 14 dias</strong>.

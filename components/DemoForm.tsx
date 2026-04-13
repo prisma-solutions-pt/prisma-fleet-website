@@ -42,7 +42,7 @@ export default function DemoForm() {
           type="text"
           required
           className="form-input"
-          placeholder="O teu nome"
+          placeholder="O seu nome"
         />
       </div>
 
@@ -73,7 +73,7 @@ export default function DemoForm() {
       <div className="form-group">
         <label htmlFor="fleet" className="form-label">Tamanho da frota</label>
         <select id="fleet" name="fleet" required className="form-select">
-          <option value="">Seleciona...</option>
+          <option value="">Selecione...</option>
           <option value="1-20">1 a 20 veículos</option>
           <option value="20-50">20 a 50 veículos</option>
           <option value="50-100">50 a 100 veículos</option>
@@ -87,7 +87,7 @@ export default function DemoForm() {
           id="message"
           name="message"
           className="form-textarea"
-          placeholder="Conta-nos sobre a tua operação..."
+          placeholder="Conte-nos sobre a sua operação..."
         />
       </div>
 
@@ -107,7 +107,7 @@ export default function DemoForm() {
       )}
       {status === "error" && (
         <p className="form-status error">
-          Erro ao enviar. Tenta novamente ou contacta-nos diretamente.
+          Erro ao enviar. Tente novamente ou contacte-nos diretamente.
         </p>
       )}
     </form>
