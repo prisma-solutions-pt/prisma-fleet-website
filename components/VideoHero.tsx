@@ -10,6 +10,7 @@ export default function VideoHero() {
         loop
         playsInline
         preload="auto"
+        poster=""
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
