@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Prisma Fleet",
   },
   description:
-    "Prisma Fleet é o software de gestão de frotas TVDE feito para operadores em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista e pagamentos SEPA. Experimente grátis durante 14 dias.",
+    "Prisma Fleet: software de gestão de frotas TVDE em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista. 14 dias grátis.",
   keywords: [
     "Prisma Fleet",
     "PrismaFleet",
@@ -92,6 +92,9 @@ export default function RootLayout({
       lang="pt-PT"
       className={`${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link rel="preload" as="image" href="/hero-poster.png" />
+      </head>
       <body>
         <script
           type="application/ld+json"

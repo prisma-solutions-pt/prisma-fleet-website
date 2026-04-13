@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Prisma Fleet | Software de Gestão de Frotas TVDE em Portugal",
   description:
-    "Prisma Fleet é o software de gestão de frotas TVDE feito para operadores em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista e pagamentos SEPA. Experimente grátis durante 14 dias.",
+    "Prisma Fleet: software de gestão de frotas TVDE em Portugal. Liquidações automáticas, importação Uber e Bolt, portal do motorista. 14 dias grátis.",
   alternates: {
     canonical: "https://www.prismafleet.pt",
   },
@@ -23,6 +23,17 @@ export const metadata: Metadata = {
     description:
       "Prisma Fleet: liquidações em minutos, não em horas. Importação Uber e Bolt, portal do motorista e pagamentos SEPA. O software feito para operadores TVDE em Portugal.",
     url: "https://www.prismafleet.pt",
+    siteName: "Prisma Fleet",
+    type: "website",
+    locale: "pt_PT",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Prisma Fleet | Software de Gestão de Frotas TVDE em Portugal",
+      },
+    ],
   },
 };
 
