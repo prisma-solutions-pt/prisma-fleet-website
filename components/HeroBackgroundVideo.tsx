@@ -1,15 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroBackgroundVideo() {
   const ref = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
 
-    const configureAndPlay = () => {
+    const gestureEvents: Array<keyof DocumentEventMap> = [
+      "touchstart",
+      "pointerdown",
+      "click",
+    ];
+
+    const configureVideo = () => {
       video.muted = true;
       video.defaultMuted = true;
       video.autoplay = true;
@@ -19,46 +26,79 @@ export default function HeroBackgroundVideo() {
       video.setAttribute("playsinline", "");
       video.setAttribute("webkit-playsinline", "true");
 
+    };
+
+    const attemptPlay = () => {
+      configureVideo();
+
       const playPromise = video.play();
       if (playPromise) {
-        playPromise.catch(() => {});
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            setIsPlaying(false);
+          });
       }
     };
+
+    const onPlaying = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
 
     const onVisibilityChange = () => {
       if (document.visibilityState === "visible") {
-        configureAndPlay();
+        attemptPlay();
       }
     };
 
-    const rafId = window.requestAnimationFrame(configureAndPlay);
+    const onFirstGesture = () => {
+      attemptPlay();
+    };
 
-    video.addEventListener("loadedmetadata", configureAndPlay);
-    video.addEventListener("canplay", configureAndPlay);
+    const rafId = window.requestAnimationFrame(attemptPlay);
+
+    video.addEventListener("loadedmetadata", attemptPlay);
+    video.addEventListener("canplay", attemptPlay);
+    video.addEventListener("playing", onPlaying);
+    video.addEventListener("pause", onPause);
     document.addEventListener("visibilitychange", onVisibilityChange);
-    window.addEventListener("pageshow", configureAndPlay);
+    window.addEventListener("pageshow", attemptPlay);
+    gestureEvents.forEach((eventName) => {
+      document.addEventListener(eventName, onFirstGesture, {
+        passive: true,
+      });
+    });
 
     return () => {
       window.cancelAnimationFrame(rafId);
-      video.removeEventListener("loadedmetadata", configureAndPlay);
-      video.removeEventListener("canplay", configureAndPlay);
+      video.removeEventListener("loadedmetadata", attemptPlay);
+      video.removeEventListener("canplay", attemptPlay);
+      video.removeEventListener("playing", onPlaying);
+      video.removeEventListener("pause", onPause);
       document.removeEventListener("visibilitychange", onVisibilityChange);
-      window.removeEventListener("pageshow", configureAndPlay);
+      window.removeEventListener("pageshow", attemptPlay);
+      gestureEvents.forEach((eventName) => {
+        document.removeEventListener(eventName, onFirstGesture);
+      });
     };
   }, []);
 
   return (
-    <video
-      ref={ref}
-      className="vhero-video"
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      aria-hidden="true"
-    >
-      <source src="/hero-video.mp4" type="video/mp4" />
-    </video>
+    <>
+      <div className="vhero-poster" aria-hidden="true" />
+      <video
+        ref={ref}
+        className={`vhero-video${isPlaying ? " is-visible" : ""}`}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+    </>
   );
 }
