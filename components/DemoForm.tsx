@@ -13,6 +13,7 @@ export default function DemoForm() {
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       fleet: (form.elements.namedItem("fleet") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
@@ -55,6 +56,18 @@ export default function DemoForm() {
           required
           className="form-input"
           placeholder="Nome da empresa"
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="email" className="form-label">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          className="form-input"
+          placeholder="voce@empresa.pt"
         />
       </div>
 

@@ -14,7 +14,7 @@ export default function CTA() {
               <span className="accent-light">e feche cada semana com controlo</span>
             </h2>
             <p className="lead-center">
-              Experimente o PrismaFleet durante 14 dias sem compromisso.
+              Experimente o Prisma Fleet durante 14 dias sem compromisso.
               Sem cartão de crédito, sem complicações.
             </p>
             <div className="cta-actions">

@@ -5,8 +5,8 @@ export default function Footer() {
     <footer className="footer" aria-label="Rodapé do site">
       <div className="footer-top">
         <div className="footer-brand">
-          <img src="/brand/prisma-mark-black.png" alt="PrismaFleet" className="footer-brand-mark" />
-          <span className="footer-brand-name">PrismaFleet</span>
+          <img src="/brand/prisma-mark-black.png" alt="Prisma Fleet" className="footer-brand-mark" />
+          <span className="footer-brand-name">Prisma Fleet</span>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span className="footer-copy">2026 PrismaFleet</span>
+        <span className="footer-copy">2026 Prisma Fleet</span>
         <span className="footer-parent">Uma solução Prisma Solutions</span>
       </div>
     </footer>

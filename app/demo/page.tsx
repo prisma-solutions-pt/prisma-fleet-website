@@ -6,12 +6,12 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Pedir Demonstração Gratuita",
   description:
-    "Agende uma demonstração personalizada do PrismaFleet. Veja como automatizar liquidações, importar ficheiros Uber e Bolt e gerir a sua frota TVDE sem Excel. 14 dias grátis, sem cartão de crédito.",
+    "Agende uma demonstração personalizada do Prisma Fleet. Veja como automatizar liquidações, importar ficheiros Uber e Bolt e gerir a sua frota TVDE sem Excel. 14 dias grátis, sem cartão de crédito.",
   alternates: {
     canonical: "https://www.prismafleet.pt/demo",
   },
   openGraph: {
-    title: "Pedir Demonstração Gratuita | PrismaFleet",
+    title: "Pedir Demonstração Gratuita | Prisma Fleet",
     description:
       "Agende uma demonstração do software de gestão de frotas TVDE. 14 dias grátis, sem compromisso.",
     url: "https://www.prismafleet.pt/demo",
@@ -27,7 +27,7 @@ export default function DemoPage() {
           <div className="demo-grid">
             <div>
               <span className="eyebrow">Pedir demonstração</span>
-              <h1 style={{ marginBottom: "16px" }}>Veja o PrismaFleet<br />em ação</h1>
+              <h1 style={{ marginBottom: "16px" }}>Veja o Prisma Fleet<br />em ação</h1>
               <p className="lead">
                 Preencha o formulário e agendamos uma demonstração personalizada
                 para a sua operação. Sem compromisso, sem cartão de crédito.

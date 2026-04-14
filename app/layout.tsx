@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "@/components/PostHogProvider";
+import CookieBanner from "@/components/CookieBanner";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -124,7 +126,10 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
+        <PostHogProvider>
+          {children}
+          <CookieBanner />
+        </PostHogProvider>
       </body>
     </html>
   );
