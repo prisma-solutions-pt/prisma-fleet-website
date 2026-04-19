@@ -170,12 +170,12 @@ export default function Home() {
       <main>
         <VideoHero />
         <Hero />
+        <ClientsStrip />
         <ProofStrip />
         <Pain />
         <Features />
         <Workflow />
         <Pricing />
-        <ClientsStrip />
         <IntegrationStrip />
         <FAQ />
         <CTA />

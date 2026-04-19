@@ -13,7 +13,7 @@ export default function ClientsStrip() {
     <section id="clientes" className="integrations-strip" aria-label="Os nossos clientes">
       <ScrollReveal>
         <p className="integrations-label">
-          A CONFIANÇA DOS NOSSOS CLIENTES
+          MAIS DE 300 CARROS EM PORTUGAL JÁ SÃO GERIDOS ATRAVÉS DA PRISMA FLEET
         </p>
       </ScrollReveal>
 
@@ -24,7 +24,6 @@ export default function ClientsStrip() {
               src={item.logo}
               alt={item.name}
               loading="lazy"
-              style={{ padding: "0 2rem", height: "auto", maxHeight: "60px", opacity: 0.8 }}
             />
           </div>
         ))}

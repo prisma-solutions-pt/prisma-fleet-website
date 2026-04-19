@@ -1577,6 +1577,15 @@ ul { list-style: none; }
   100% { transform: translateX(-50%); }
 }
 
+/* ── Clients strip (larger logos for credibility) ── */
+#clientes .integrations-logo {
+  height: 90px;
+}
+
+#clientes .integrations-logo img {
+  height: 80px;
+}
+
 /* ── FAQ (2-column, expandable) ── */
 .faq-grid {
   display: grid;
