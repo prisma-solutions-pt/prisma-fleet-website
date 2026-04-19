@@ -1586,6 +1586,16 @@ ul { list-style: none; }
   height: 80px;
 }
 
+.clients-label {
+  font-size: 1.05rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+.clients-highlight {
+  color: #60a5fa;
+  font-weight: 900;
+}
+
 /* ── FAQ (2-column, expandable) ── */
 .faq-grid {
   display: grid;

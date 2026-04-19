@@ -12,8 +12,8 @@ export default function ClientsStrip() {
   return (
     <section id="clientes" className="integrations-strip" aria-label="Os nossos clientes">
       <ScrollReveal>
-        <p className="integrations-label">
-          MAIS DE 300 CARROS EM PORTUGAL JÁ SÃO GERIDOS ATRAVÉS DA PRISMA FLEET
+        <p className="integrations-label clients-label">
+          MAIS DE <span className="clients-highlight">300 CARROS</span> EM PORTUGAL JÁ SÃO GERIDOS ATRAVÉS DA PRISMA FLEET
         </p>
       </ScrollReveal>
 

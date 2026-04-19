@@ -171,9 +171,9 @@ export default function Home() {
         <VideoHero />
         <Hero />
         <ClientsStrip />
-        <ProofStrip />
         <Pain />
         <Features />
+        <ProofStrip />
         <Workflow />
         <Pricing />
         <IntegrationStrip />
