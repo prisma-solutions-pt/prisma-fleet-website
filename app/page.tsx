@@ -10,6 +10,7 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import IntegrationStrip from "@/components/IntegrationStrip";
+import ClientsStrip from "@/components/ClientsStrip";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -174,6 +175,7 @@ export default function Home() {
         <Features />
         <Workflow />
         <Pricing />
+        <ClientsStrip />
         <IntegrationStrip />
         <FAQ />
         <CTA />

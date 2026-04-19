@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 120" width="350" height="120">
+  <path d="M 150,30 L 150,70 Q 150,80 140,80 L 120,80 Q 110,80 110,70 L 110,30 Z" fill="#66bb6a" />
+  <rect x="118" y="15" width="8" height="15" fill="#66bb6a" rx="4" />
+  <rect x="134" y="15" width="8" height="15" fill="#66bb6a" rx="4" />
+  
+  <text x="10" y="80" font-family="Arial, sans-serif" font-weight="900" font-size="70" fill="#424242">EV</text>
+  <text x="155" y="80" font-family="Arial, sans-serif" font-weight="900" font-size="70" fill="#424242">mob</text>
+  <text x="175" y="105" font-family="Arial, sans-serif" font-size="18" fill="#424242">www.EVmob.pt</text>
+</svg>

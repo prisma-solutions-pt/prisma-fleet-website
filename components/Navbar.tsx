@@ -55,6 +55,9 @@ export default function Navbar() {
             <Link href="/#como-funciona" className="nav-link">
               Como funciona
             </Link>
+            <Link href="/#clientes" className="nav-link">
+              Clientes
+            </Link>
             <Link href="/#precos" className="nav-link">
               Preços
             </Link>
@@ -84,6 +87,9 @@ export default function Navbar() {
           </Link>
           <Link href="/#como-funciona" className="nav-mobile-link">
             Como funciona
+          </Link>
+          <Link href="/#clientes" className="nav-mobile-link">
+            Clientes
           </Link>
           <Link href="/#precos" className="nav-mobile-link">
             Preços
