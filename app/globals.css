@@ -1589,23 +1589,69 @@ ul { list-style: none; }
   100% { transform: translateX(calc(-100% / var(--integration-repeat-count))); }
 }
 
-/* ── Clients strip (larger logos for credibility) ── */
-#clientes .integrations-logo {
-  height: 90px;
-}
-
-#clientes .integrations-logo img {
-  height: 80px;
+/* ── Clients strip ── */
+.clients-strip {
+  padding: 48px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .clients-label {
-  font-size: 1.05rem !important;
-  letter-spacing: 0.08em !important;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: clientsScroll 8.5s linear infinite;
+}
+
+.clients-group {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  flex-shrink: 0;
+}
+
+.clients-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  opacity: 0.45;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.clients-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.clients-logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .clients-highlight {
   color: #60a5fa;
   font-weight: 900;
+}
+
+@keyframes clientsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / var(--clients-repeat-count))); }
 }
 
 /* ── FAQ (2-column, expandable) ── */
