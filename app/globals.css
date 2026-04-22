@@ -1544,10 +1544,17 @@ ul { list-style: none; }
 
 .integrations-track {
   display: flex;
-  gap: 48px;
   align-items: center;
   width: max-content;
-  animation: integrationScroll 20s linear infinite;
+  animation: integrationScroll 14s linear infinite;
+}
+
+.integrations-group {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  flex-shrink: 0;
 }
 
 .integrations-logo {
@@ -1555,26 +1562,31 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  opacity: 0.45;
-  filter: grayscale(100%);
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  height: 48px;
+  opacity: 0.76;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .integrations-logo:hover {
   opacity: 1;
-  filter: grayscale(0%);
+  transform: translateY(-2px);
 }
 
 .integrations-logo img {
-  height: 32px;
+  height: 40px;
+  max-width: 144px;
   width: auto;
   object-fit: contain;
 }
 
+.integrations-logo img.integration-logo-bp {
+  height: 50px;
+  max-width: 50px;
+}
+
 @keyframes integrationScroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(calc(-100% / var(--integration-repeat-count))); }
 }
 
 /* ── Clients strip (larger logos for credibility) ── */

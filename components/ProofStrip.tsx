@@ -1,11 +1,12 @@
 const ITEMS = [
-  "Uber e Bolt",
-  "Via Verde e Prio",
-  "CSV e XLSX",
+  "Liquidações automáticas",
+  "Importação CSV e XLSX",
   "SEPA XML",
   "Portal do motorista",
   "Analytics da frota",
   "Renda fixa ou revenue share",
+  "Exportação PDF",
+  "Manutenção e inspeções",
 ];
 
 export default function ProofStrip() {
