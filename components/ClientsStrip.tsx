@@ -2,8 +2,8 @@ import type { CSSProperties } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const CLIENTS = [
-  { name: "Bewegung", logo: "/clientes/bewegung.svg" },
-  { name: "EVmob", logo: "/clientes/evmob.svg" },
+  { name: "Bewegung", logo: "/clientes/bewegung.svg", url: "https://www.facebook.com/BewegungFrotaTVDE" },
+  { name: "EVmob", logo: "/clientes/evmob.svg", url: "https://evmob.pt" },
 ];
 const REPEAT_COUNT = 8;
 
@@ -31,13 +31,21 @@ export default function ClientsStrip() {
             aria-hidden={groupIndex > 0}
           >
             {CLIENTS.map((item) => (
-              <div key={`${groupIndex}-${item.name}`} className="clients-logo">
+              <a
+                key={`${groupIndex}-${item.name}`}
+                className="clients-logo"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir site de ${item.name} numa nova janela`}
+                tabIndex={groupIndex > 0 ? -1 : 0}
+              >
                 <img
                   src={item.logo}
                   alt={item.name}
                   loading="lazy"
                 />
-              </div>
+              </a>
             ))}
           </div>
         ))}

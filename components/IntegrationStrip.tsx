@@ -2,12 +2,12 @@ import type { CSSProperties } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const INTEGRATIONS = [
-  { name: "Uber", logo: "/integrations/uber.png" },
-  { name: "Bolt", logo: "/integrations/bolt.png" },
-  { name: "Via Verde", logo: "/integrations/viaverde.png" },
-  { name: "Prio", logo: "/integrations/prio.svg" },
-  { name: "Galp", logo: "/integrations/galp.png" },
-  { name: "BP", logo: "/integrations/bp.png", logoClassName: "integration-logo-bp" },
+  { name: "Uber", logo: "/integrations/uber.png", url: "https://www.uber.com/pt/pt/" },
+  { name: "Bolt", logo: "/integrations/bolt.png", url: "https://bolt.eu/pt-pt/" },
+  { name: "Via Verde", logo: "/integrations/viaverde.png", url: "https://www.viaverde.pt" },
+  { name: "Prio", logo: "/integrations/prio.svg", url: "https://www.prio.pt" },
+  { name: "Galp", logo: "/integrations/galp.png", url: "https://galp.com/pt/pt" },
+  { name: "BP", logo: "/integrations/bp.png", logoClassName: "integration-logo-bp", url: "https://www.bp.com/pt_pt/portugal/home.html" },
 ];
 const REPEAT_COUNT = 6;
 
@@ -35,14 +35,22 @@ export default function IntegrationStrip() {
             aria-hidden={groupIndex > 0}
           >
             {INTEGRATIONS.map((item) => (
-              <div key={`${groupIndex}-${item.name}`} className="integrations-logo">
+              <a
+                key={`${groupIndex}-${item.name}`}
+                className="integrations-logo"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir site de ${item.name} numa nova janela`}
+                tabIndex={groupIndex > 0 ? -1 : 0}
+              >
                 <img
                   src={item.logo}
                   alt={item.name}
                   loading="lazy"
                   className={item.logoClassName}
                 />
-              </div>
+              </a>
             ))}
           </div>
         ))}
