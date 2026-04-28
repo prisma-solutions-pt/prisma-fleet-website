@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import HeroBackgroundVideo from "./HeroBackgroundVideo";
 
 export default function VideoHero() {
+  const t = useTranslations("VideoHero");
+
   return (
     <section className="vhero">
       <HeroBackgroundVideo />
@@ -11,32 +14,29 @@ export default function VideoHero() {
       <div className="vhero-content">
         <div className="vhero-text">
           <span className="eyebrow eyebrow-dark vhero-enter vhero-enter-1">
-            Gestão de frotas TVDE
+            {t("eyebrow")}
           </span>
 
           <h1 className="vhero-enter vhero-enter-2">
-            Liquidações em minutos.
+            {t("titleA")}
             <br />
-            <span className="accent-light">Não em horas.</span>
-            <span className="sr-only">
-              {" "}Software de gestão de frotas TVDE em Portugal.
-            </span>
+            <span className="accent-light">{t("titleB")}</span>
+            <span className="sr-only"> {t("srSuffix")}</span>
           </h1>
 
           <p className="vhero-lead vhero-enter vhero-enter-3">
-            Prisma Fleet é o software que substitui as folhas de Excel, elimina
-            erros de cálculo e dá aos seus motoristas um portal com o extrato deles.
+            {t("lead")}
           </p>
 
           <div className="vhero-actions vhero-enter vhero-enter-4">
             <a href="#funcionalidades" className="btn btn-ghost-dark">
-              Ver funcionalidades
+              {t("viewFeatures")}
             </a>
             <a href="#precos" className="btn btn-ghost-dark">
-              Ver preços
+              {t("viewPricing")}
             </a>
             <Link href="/demo" className="btn btn-primary btn-arrow">
-              Começar trial gratuito
+              {t("startTrial")}
             </Link>
           </div>
         </div>

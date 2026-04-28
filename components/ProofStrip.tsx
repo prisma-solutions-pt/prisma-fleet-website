@@ -1,23 +1,15 @@
-const ITEMS = [
-  "Liquidações automáticas",
-  "Importação CSV e XLSX",
-  "SEPA XML",
-  "Portal do motorista",
-  "Analytics da frota",
-  "Renda fixa ou revenue share",
-  "Exportação PDF",
-  "Manutenção e inspeções",
-];
+import { useTranslations } from "next-intl";
 
 export default function ProofStrip() {
+  const t = useTranslations("ProofStrip");
+  const items = t.raw("items") as string[];
+
   return (
-    <section className="proof-strip" aria-label="Integrações e fluxos suportados">
-      <p className="proof-strip-label">
-        Feito para a rotina real de operadores TVDE em Portugal
-      </p>
+    <section className="proof-strip" aria-label={t("aria")}>
+      <p className="proof-strip-label">{t("label")}</p>
 
       <div className="proof-strip-track">
-        {ITEMS.concat(ITEMS).map((item, index) => (
+        {items.concat(items).map((item, index) => (
           <div key={`${item}-${index}`} className="proof-pill">
             <span className="proof-pill-dot" />
             <span>{item}</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import posthog from "posthog-js";
 
 type Prefs = {
@@ -29,6 +30,7 @@ function apply(prefs: Prefs) {
 }
 
 export default function CookieBanner() {
+  const t = useTranslations("CookieBanner");
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<"summary" | "customize">("summary");
   const [prefs, setPrefs] = useState<Prefs>(DEFAULTS);
@@ -88,91 +90,80 @@ export default function CookieBanner() {
                   <circle cx="10" cy="15.5" r="0.6" fill="currentColor"/>
                 </svg>
               </div>
-              <h2 id="cc-title" className="cc-title">A sua privacidade</h2>
+              <h2 id="cc-title" className="cc-title">{t("title")}</h2>
             </div>
 
-            <p className="cc-body">
-              Utilizamos cookies para fazer o site funcionar e, com a sua permissão,
-              para perceber como é usado e melhorar a experiência. Pode aceitar tudo,
-              recusar o que não for essencial ou personalizar as suas escolhas.
-            </p>
+            <p className="cc-body">{t("body")}</p>
 
             <div className="cc-actions cc-actions-summary">
               <button type="button" className="cc-btn cc-btn-ghost" onClick={() => setView("customize")}>
-                Personalizar
+                {t("customize")}
               </button>
               <button type="button" className="cc-btn cc-btn-outline" onClick={rejectAll}>
-                Rejeitar tudo
+                {t("rejectAll")}
               </button>
               <button type="button" className="cc-btn cc-btn-primary" onClick={acceptAll}>
-                Aceitar tudo
+                {t("acceptAll")}
               </button>
             </div>
 
             <p className="cc-footnote">
-              Consulte a nossa{" "}
+              {t("footnoteStart")}
               <a href="/privacidade" className="cc-link">
-                política de privacidade
+                {t("footnoteLink")}
               </a>
-              .
+              {t("footnoteEnd")}
             </p>
           </>
         ) : (
           <>
             <div className="cc-head">
-              <button type="button" className="cc-back" onClick={() => setView("summary")} aria-label="Voltar">
+              <button type="button" className="cc-back" onClick={() => setView("summary")} aria-label={t("back")}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 18l-6-6 6-6"/>
                 </svg>
               </button>
-              <h2 id="cc-title" className="cc-title">Preferências de cookies</h2>
+              <h2 id="cc-title" className="cc-title">{t("preferences")}</h2>
             </div>
 
             <ul className="cc-categories">
               <li className="cc-category">
                 <div className="cc-cat-head">
                   <div>
-                    <div className="cc-cat-name">Essenciais</div>
-                    <div className="cc-cat-tag">Sempre ativos</div>
+                    <div className="cc-cat-name">{t("essential")}</div>
+                    <div className="cc-cat-tag">{t("alwaysOn")}</div>
                   </div>
-                  <Toggle checked disabled onChange={() => {}} label="Essenciais" />
+                  <Toggle checked disabled onChange={() => {}} label={t("essential")} />
                 </div>
-                <p className="cc-cat-desc">
-                  Necessários para o funcionamento do site: sessão, consentimento
-                  guardado e submissão do formulário de demonstração. Não podem ser desativados.
-                </p>
+                <p className="cc-cat-desc">{t("essentialDesc")}</p>
               </li>
 
               <li className="cc-category">
                 <div className="cc-cat-head">
                   <div>
-                    <div className="cc-cat-name">Análise</div>
-                    <div className="cc-cat-tag cc-cat-tag-optional">Opcional</div>
+                    <div className="cc-cat-name">{t("analytics")}</div>
+                    <div className="cc-cat-tag cc-cat-tag-optional">{t("optional")}</div>
                   </div>
                   <Toggle
                     checked={prefs.analytics}
                     onChange={(v) => setPrefs({ ...prefs, analytics: v })}
-                    label="Análise"
+                    label={t("analytics")}
                   />
                 </div>
-                <p className="cc-cat-desc">
-                  Utilizamos o PostHog (alojado na UE) para recolher estatísticas
-                  agregadas: páginas vistas, origem do tráfego, cliques em botões e
-                  sessões anónimas. Ajuda-nos a perceber o que funciona e a melhorar o produto.
-                </p>
+                <p className="cc-cat-desc">{t("analyticsDesc")}</p>
               </li>
             </ul>
 
             <div className="cc-actions cc-actions-customize">
               <button type="button" className="cc-btn cc-btn-outline" onClick={rejectAll}>
-                Rejeitar tudo
+                {t("rejectAll")}
               </button>
               <div className="cc-actions-right">
                 <button type="button" className="cc-btn cc-btn-ghost" onClick={savePrefs}>
-                  Guardar preferências
+                  {t("savePrefs")}
                 </button>
                 <button type="button" className="cc-btn cc-btn-primary" onClick={acceptAll}>
-                  Aceitar tudo
+                  {t("acceptAll")}
                 </button>
               </div>
             </div>

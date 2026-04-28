@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { useTranslations } from "next-intl";
 import ScrollReveal from "./ScrollReveal";
 
 const INTEGRATIONS = [
@@ -12,11 +13,13 @@ const INTEGRATIONS = [
 const REPEAT_COUNT = 6;
 
 export default function IntegrationStrip() {
+  const t = useTranslations("IntegrationStrip");
+
   return (
-    <section className="integrations-strip" aria-label="Integrações suportadas">
+    <section className="integrations-strip" aria-label={t("aria")}>
       <ScrollReveal>
         <p className="integrations-label">
-          Integrações com as plataformas que já utiliza
+          {t("label")}
         </p>
       </ScrollReveal>
 
@@ -41,7 +44,7 @@ export default function IntegrationStrip() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Abrir site de ${item.name} numa nova janela`}
+                aria-label={t("openSite", { name: item.name })}
                 tabIndex={groupIndex > 0 ? -1 : 0}
               >
                 <img

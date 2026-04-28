@@ -1,8 +1,11 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
-    <footer className="footer" aria-label="Rodapé do site">
+    <footer className="footer" aria-label={t("aria")}>
       <div className="footer-top">
         <div className="footer-brand">
           <img src="/brand/prisma-mark-black.png" alt="Prisma Fleet" className="footer-brand-mark" />
@@ -12,28 +15,28 @@ export default function Footer() {
 
       <div className="footer-columns">
         <div>
-          <div className="footer-col-title">Produto</div>
+          <div className="footer-col-title">{t("product")}</div>
           <div className="footer-col-links">
-            <a href="#funcionalidades" className="footer-col-link">Funcionalidades</a>
-            <a href="#precos" className="footer-col-link">Preços</a>
-            <a href="#como-funciona" className="footer-col-link">Como funciona</a>
+            <a href="#funcionalidades" className="footer-col-link">{t("features")}</a>
+            <a href="#precos" className="footer-col-link">{t("pricing")}</a>
+            <a href="#como-funciona" className="footer-col-link">{t("howItWorks")}</a>
           </div>
         </div>
         <div>
-          <div className="footer-col-title">Recursos</div>
+          <div className="footer-col-title">{t("resources")}</div>
           <div className="footer-col-links">
-            <Link href="/demo" className="footer-col-link">Pedir Demo</Link>
+            <Link href="/demo" className="footer-col-link">{t("demo")}</Link>
           </div>
         </div>
         <div>
-          <div className="footer-col-title">Legal</div>
+          <div className="footer-col-title">{t("legal")}</div>
           <div className="footer-col-links">
-            <Link href="/privacidade" className="footer-col-link">Política de Privacidade</Link>
-            <Link href="/termos" className="footer-col-link">Termos de Serviço</Link>
+            <Link href="/privacidade" className="footer-col-link">{t("privacy")}</Link>
+            <Link href="/termos" className="footer-col-link">{t("terms")}</Link>
           </div>
         </div>
         <div>
-          <div className="footer-col-title">Contacto</div>
+          <div className="footer-col-title">{t("contact")}</div>
           <div className="footer-col-links">
             <a href="mailto:geral@prismasolutions.pt" className="footer-col-link">geral@prismasolutions.pt</a>
           </div>
@@ -41,8 +44,8 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span className="footer-copy">2026 Prisma Fleet</span>
-        <span className="footer-parent">Uma solução Prisma Solutions</span>
+        <span className="footer-copy">{t("copy")}</span>
+        <span className="footer-parent">{t("parent")}</span>
       </div>
     </footer>
   );

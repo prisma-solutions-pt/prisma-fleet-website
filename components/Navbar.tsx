@@ -3,9 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("Navbar");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const isHome = pathname === "/";
@@ -50,28 +53,29 @@ export default function Navbar() {
 
           <div className="nav-links">
             <Link href="/#funcionalidades" className="nav-link">
-              Funcionalidades
+              {t("features")}
             </Link>
             <Link href="/#como-funciona" className="nav-link">
-              Como funciona
+              {t("howItWorks")}
             </Link>
             <Link href="/#clientes" className="nav-link">
-              Clientes
+              {t("clients")}
             </Link>
             <Link href="/#precos" className="nav-link">
-              Preços
+              {t("pricing")}
             </Link>
           </div>
 
           <div className="nav-actions">
+            <LanguageSwitcher />
             <Link href="/demo" className="btn btn-primary btn-arrow">
-              Pedir Demo
+              {t("demo")}
             </Link>
             <button
               type="button"
               className={`nav-burger${mobileOpen ? " open" : ""}`}
               onClick={() => setMobileOpen((open) => !open)}
-              aria-label="Abrir menu"
+              aria-label={t("openMenu")}
               aria-expanded={mobileOpen}
             >
               <span />
@@ -83,19 +87,22 @@ export default function Navbar() {
 
         <div className={`nav-mobile${mobileOpen ? " open" : ""}`}>
           <Link href="/#funcionalidades" className="nav-mobile-link">
-            Funcionalidades
+            {t("features")}
           </Link>
           <Link href="/#como-funciona" className="nav-mobile-link">
-            Como funciona
+            {t("howItWorks")}
           </Link>
           <Link href="/#clientes" className="nav-mobile-link">
-            Clientes
+            {t("clients")}
           </Link>
           <Link href="/#precos" className="nav-mobile-link">
-            Preços
+            {t("pricing")}
           </Link>
+          <div className="nav-mobile-lang">
+            <LanguageSwitcher />
+          </div>
           <Link href="/demo" className="btn btn-primary btn-arrow nav-mobile-cta">
-            Pedir Demo
+            {t("demo")}
           </Link>
         </div>
       </div>

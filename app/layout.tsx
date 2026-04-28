@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, JetBrains_Mono } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import CookieBanner from "@/components/CookieBanner";
@@ -87,14 +89,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const htmlLang = locale === "en" ? "en" : "pt-PT";
+
   return (
     <html
-      lang="pt-PT"
+      lang={htmlLang}
       className={`${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
       <body>
@@ -126,10 +132,12 @@ export default function RootLayout({
             }),
           }}
         />
-        <PostHogProvider>
-          {children}
-          <CookieBanner />
-        </PostHogProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <PostHogProvider>
+            {children}
+            <CookieBanner />
+          </PostHogProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

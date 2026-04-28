@@ -44,7 +44,7 @@ ToDesktop.com-inspired layout with the Fleet app's palette. Video hero, dark wav
 
 1. Zero emojis anywhere in any file
 2. All styles in `globals.css`. No CSS Modules, no Tailwind
-3. Formal Portuguese copy (pt-PT, "você" register, not "tu"). No i18n needed for now
+3. Formal Portuguese copy (pt-PT, "você" register, not "tu"). i18n with EN translation is wired via next-intl (cookie-based, default PT)
 4. Animations are functional, not decorative
 5. Screenshot placeholders use styled "Em breve" cards, ready to be swapped for real images
 6. Video hero fades seamlessly into dark wave section, then into light body
@@ -67,8 +67,15 @@ prismafleet.pt/
 ## Key Files
 
 ```
+i18n/
+  request.ts          next-intl config (cookie-based, default "pt", supports "en")
+messages/
+  pt.json             Portuguese strings (default)
+  en.json             English strings
+lib/
+  locale-actions.ts   Server Action `setLocale` writes NEXT_LOCALE cookie
 app/
-  layout.tsx          Root layout (Source Sans 3 + JetBrains Mono, Organization JSON-LD)
+  layout.tsx          Root layout (Source Sans 3 + JetBrains Mono, Organization JSON-LD, NextIntlClientProvider)
   page.tsx            Homepage composing all sections (SoftwareApplication + FAQPage JSON-LD)
   globals.css         ALL styles (~1700 lines)
   sitemap.ts          Dynamic sitemap for / and /demo
@@ -77,6 +84,7 @@ app/
   api/demo/route.ts   Form submission endpoint (placeholder)
 components/
   Navbar.tsx          Floating pill navbar (hidden by default, appears on scroll past video hero)
+  LanguageSwitcher.tsx EN/PT pill (sliding indicator, calls setLocale server action)
   VideoHero.tsx       Full-viewport background video hero (left-aligned text, 3 CTAs)
   Hero.tsx            Dark wave section with fact pills, 3 feature prop cards, screenshot frame
   ProofStrip.tsx      Scrolling pill strip (integrations/features)

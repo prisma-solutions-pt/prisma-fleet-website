@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { useTranslations } from "next-intl";
 import ScrollReveal from "./ScrollReveal";
 
 const CLIENTS = [
@@ -8,11 +9,13 @@ const CLIENTS = [
 const REPEAT_COUNT = 8;
 
 export default function ClientsStrip() {
+  const t = useTranslations("ClientsStrip");
+
   return (
-    <section id="clientes" className="clients-strip" aria-label="Os nossos clientes">
+    <section id="clientes" className="clients-strip" aria-label={t("aria")}>
       <ScrollReveal>
         <p className="clients-label">
-          MAIS DE <span className="clients-highlight">300 CARROS</span> EM PORTUGAL JÁ SÃO GERIDOS ATRAVÉS DA PRISMA FLEET
+          {t("labelPrefix")} <span className="clients-highlight">{t("labelHighlight")}</span> {t("labelSuffix")}
         </p>
       </ScrollReveal>
 
@@ -37,7 +40,7 @@ export default function ClientsStrip() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Abrir site de ${item.name} numa nova janela`}
+                aria-label={t("openSite", { name: item.name })}
                 tabIndex={groupIndex > 0 ? -1 : 0}
               >
                 <img

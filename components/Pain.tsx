@@ -1,63 +1,63 @@
+import { useTranslations } from "next-intl";
 import ScrollReveal from "./ScrollReveal";
 
-const PAINS = [
-  {
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
-      </svg>
-    ),
-    stat: "4h+",
-    title: "Perdidas em Excel por semana",
-    desc: "Copiar dados, calcular descontos, verificar valores. Todas as semanas, a mesma rotina manual.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M15 9l-6 6M9 9l6 6" />
-      </svg>
-    ),
-    stat: "23%",
-    title: "Liquidações com erros",
-    desc: "Fórmulas partidas, linhas trocadas, combustível esquecido. Erros que custam dinheiro.",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-        <circle cx="12" cy="12" r="3" />
-        <path d="M1 1l22 22" />
-      </svg>
-    ),
-    stat: "0",
-    title: "Visibilidade para motoristas",
-    desc: "Os motoristas ligam a perguntar quanto vão receber. Sem portal, sem transparência.",
-  },
-];
-
 export default function Pain() {
+  const t = useTranslations("Pain");
+
+  const pains = [
+    {
+      icon: (
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+      ),
+      stat: t("card1Stat"),
+      title: t("card1Title"),
+      desc: t("card1Desc"),
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M15 9l-6 6M9 9l6 6" />
+        </svg>
+      ),
+      stat: t("card2Stat"),
+      title: t("card2Title"),
+      desc: t("card2Desc"),
+    },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M1 1l22 22" />
+        </svg>
+      ),
+      stat: t("card3Stat"),
+      title: t("card3Title"),
+      desc: t("card3Desc"),
+    },
+  ];
+
   return (
     <section className="section" id="problema">
       <div className="wrap">
         <ScrollReveal>
           <div className="section-head">
-            <span className="eyebrow">O problema</span>
+            <span className="eyebrow">{t("eyebrow")}</span>
             <h2>
-              Gerir uma frota TVDE não
+              {t("titleA")}
               <br />
-              <span className="accent">devia depender de Excel</span>
+              <span className="accent">{t("titleB")}</span>
             </h2>
-            <p className="lead-center">
-              Operadores perdem horas todas as semanas em tarefas que deviam ser
-              automáticas. E os erros saem caros.
-            </p>
+            <p className="lead-center">{t("lead")}</p>
           </div>
         </ScrollReveal>
 
         <div className="pain-grid">
-          {PAINS.map((p, i) => (
+          {pains.map((p, i) => (
             <ScrollReveal key={i} delay={i + 1}>
               <div className="pain-card">
                 <div className="pain-icon">{p.icon}</div>

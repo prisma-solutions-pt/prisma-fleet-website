@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import ScrollReveal from "./ScrollReveal";
 
 function Check() {
@@ -11,74 +12,56 @@ function Check() {
   );
 }
 
-const PLANS = [
-  {
-    name: "Starter",
-    price: null as string | null,
-    desc: "Para operadores com frotas até 30 veículos que querem sair do Excel.",
-    label: "Plano Starter inclui:",
-    features: [
-      "Até 30 veículos",
-      "Liquidações automáticas",
-      "Importação Uber e Bolt",
-      "Portal do motorista",
-      "Suporte por email",
-    ],
-    featured: false,
-  },
-  {
-    name: "Pro",
-    price: null as string | null,
-    desc: "Para operadores em crescimento que precisam de controlo total.",
-    label: "Tudo do Starter, mais:",
-    features: [
-      "Até 150 veículos",
-      "Pagamentos SEPA",
-      "Dashboard analytics",
-      "Via Verde e Prio",
-      "Multi-empresa",
-      "Suporte prioritário",
-    ],
-    featured: true,
-  },
-  {
-    name: "Enterprise",
-    price: null as string | null,
-    desc: "Para grandes operadores que precisam de infraestrutura dedicada.",
-    label: "Tudo do Pro, mais:",
-    features: [
-      "Veículos ilimitados",
-      "Instância dedicada",
-      "Integração Bolt API",
-      "Relatórios personalizados",
-      "Onboarding dedicado",
-      "SLA garantido",
-    ],
-    featured: false,
-  },
-];
-
 export default function Pricing() {
+  const t = useTranslations("Pricing");
+
+  const plans = [
+    {
+      name: t("starterName"),
+      price: null as string | null,
+      desc: t("starterDesc"),
+      label: t("starterLabel"),
+      features: t.raw("starterFeatures") as string[],
+      featured: false,
+    },
+    {
+      name: t("proName"),
+      price: null as string | null,
+      desc: t("proDesc"),
+      label: t("proLabel"),
+      features: t.raw("proFeatures") as string[],
+      featured: true,
+    },
+    {
+      name: t("enterpriseName"),
+      price: null as string | null,
+      desc: t("enterpriseDesc"),
+      label: t("enterpriseLabel"),
+      features: t.raw("enterpriseFeatures") as string[],
+      featured: false,
+    },
+  ];
+
   return (
     <section className="section" id="precos">
       <div className="wrap">
         <ScrollReveal>
           <div className="section-head">
-            <span className="eyebrow">Preços</span>
+            <span className="eyebrow">{t("eyebrow")}</span>
             <h2>
-              Escolha o plano certo
+              {t("titleA")}
               <br />
-              <span className="accent">para a fase da sua frota</span>
+              <span className="accent">{t("titleB")}</span>
             </h2>
             <p className="lead-center">
-              Todos os planos incluem um <strong>trial gratuito de 14 dias</strong>.
+              {t("leadStart")}<strong>{t("leadHighlight")}</strong>{t("leadEnd")}
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal>
           <div className="pricing-grid">
-            {PLANS.map((plan) => (
+            {plans.map((plan) => (
               <div
                 key={plan.name}
                 className={`pricing-card${plan.featured ? " featured" : ""}`}
@@ -89,16 +72,16 @@ export default function Pricing() {
                 {plan.price ? (
                   <>
                     <div className="pricing-amount">
-                      <span className="pricing-currency">EUR</span>
+                      <span className="pricing-currency">{t("currency")}</span>
                       <span className="pricing-value">{plan.price}</span>
                     </div>
-                    <div className="pricing-period">/ mês</div>
+                    <div className="pricing-period">{t("perMonth")}</div>
                   </>
                 ) : (
                   <div className="pricing-soon">
                     <span className="pricing-soon-badge">
                       <span className="pricing-soon-shimmer" />
-                      Preços em breve
+                      {t("soon")}
                     </span>
                   </div>
                 )}
@@ -108,7 +91,7 @@ export default function Pricing() {
                   className={`btn ${plan.featured ? "btn-primary" : "btn-ghost"} btn-arrow`}
                   style={{ justifyContent: "center", width: "100%", marginBottom: "24px" }}
                 >
-                  Começar trial
+                  {t("startTrial")}
                 </Link>
 
                 <hr className="pricing-separator" />

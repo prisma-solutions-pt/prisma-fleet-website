@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import DemoForm from "@/components/DemoForm";
 import Footer from "@/components/Footer";
@@ -18,7 +19,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DemoPage() {
+export default async function DemoPage() {
+  const t = await getTranslations("DemoPage");
+
   return (
     <>
       <Navbar />
@@ -26,36 +29,33 @@ export default function DemoPage() {
         <section className="demo-page">
           <div className="demo-grid">
             <div>
-              <span className="eyebrow">Pedir demonstração</span>
-              <h1 style={{ marginBottom: "16px" }}>Veja o Prisma Fleet<br />em ação</h1>
-              <p className="lead">
-                Preencha o formulário e agendamos uma demonstração personalizada
-                para a sua operação. Sem compromisso, sem cartão de crédito.
-              </p>
+              <span className="eyebrow">{t("eyebrow")}</span>
+              <h1 style={{ marginBottom: "16px" }}>{t("titleA")}<br />{t("titleB")}</h1>
+              <p className="lead">{t("lead")}</p>
 
               <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div className="demo-benefit">
                   <div style={{ fontWeight: 600, marginBottom: "4px", color: "var(--ink)" }}>
-                    Resposta em menos de 24 horas
+                    {t("benefit1Title")}
                   </div>
                   <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    A equipa entra em contacto consigo no dia útil seguinte.
+                    {t("benefit1Desc")}
                   </div>
                 </div>
                 <div className="demo-benefit">
                   <div style={{ fontWeight: 600, marginBottom: "4px", color: "var(--ink)" }}>
-                    Demo personalizada
+                    {t("benefit2Title")}
                   </div>
                   <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    Mostramos a plataforma com dados adaptados ao tamanho da sua frota.
+                    {t("benefit2Desc")}
                   </div>
                 </div>
                 <div className="demo-benefit">
                   <div style={{ fontWeight: 600, marginBottom: "4px", color: "var(--ink)" }}>
-                    14 dias de trial gratuito
+                    {t("benefit3Title")}
                   </div>
                   <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    Depois da demo, experimente com os seus dados reais durante 2 semanas.
+                    {t("benefit3Desc")}
                   </div>
                 </div>
               </div>
