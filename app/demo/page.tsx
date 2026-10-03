@@ -22,43 +22,39 @@ export const metadata: Metadata = {
 export default async function DemoPage() {
   const t = await getTranslations("DemoPage");
 
+  const benefits = [1, 2, 3].map((n) => ({
+    title: t(`benefit${n}Title`),
+    desc: t(`benefit${n}Desc`),
+  }));
+
   return (
     <>
       <Navbar />
       <main>
-        <section className="demo-page">
-          <div className="demo-grid">
-            <div>
+        <section className="demo">
+          <div className="container demo-grid">
+            <div className="demo-copy">
               <span className="eyebrow">{t("eyebrow")}</span>
-              <h1 style={{ marginBottom: "16px" }}>{t("titleA")}<br />{t("titleB")}</h1>
-              <p className="lead">{t("lead")}</p>
+              <h1>
+                {t("titleA")} <span className="muted">{t("titleB")}</span>
+              </h1>
+              <p className="section-lead">{t("lead")}</p>
 
-              <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div className="demo-benefit">
-                  <div style={{ fontWeight: 600, marginBottom: "4px", color: "var(--ink)" }}>
-                    {t("benefit1Title")}
-                  </div>
-                  <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    {t("benefit1Desc")}
-                  </div>
-                </div>
-                <div className="demo-benefit">
-                  <div style={{ fontWeight: 600, marginBottom: "4px", color: "var(--ink)" }}>
-                    {t("benefit2Title")}
-                  </div>
-                  <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    {t("benefit2Desc")}
-                  </div>
-                </div>
-                <div className="demo-benefit">
-                  <div style={{ fontWeight: 600, marginBottom: "4px", color: "var(--ink)" }}>
-                    {t("benefit3Title")}
-                  </div>
-                  <div style={{ color: "var(--ink2)", fontSize: "0.88rem" }}>
-                    {t("benefit3Desc")}
-                  </div>
-                </div>
-              </div>
+              <ol className="demo-benefits">
+                {benefits.map((b, i) => (
+                  <li key={b.title}>
+                    <span className="demo-n">0{i + 1}</span>
+                    <div>
+                      <b>{b.title}</b>
+                      <span>{b.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <p className="demo-sources">
+                Uber <i /> Bolt <i /> Via Verde <i /> Prio
+              </p>
             </div>
 
             <DemoForm />

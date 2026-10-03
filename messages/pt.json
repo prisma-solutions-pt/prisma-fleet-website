@@ -1,185 +1,240 @@
 {
   "Navbar": {
-    "features": "Funcionalidades",
+    "aria": "Navegação principal",
+    "product": "Produto",
     "howItWorks": "Como funciona",
-    "clients": "Clientes",
+    "integrations": "Integrações",
     "pricing": "Preços",
-    "demo": "Pedir Demo",
+    "faq": "FAQ",
+    "demo": "Agendar demonstração",
     "openMenu": "Abrir menu"
   },
-  "VideoHero": {
-    "eyebrow": "Gestão de frotas TVDE",
-    "titleA": "Liquidações em minutos.",
-    "titleB": "Não em horas.",
-    "srSuffix": "Software de gestão de frotas TVDE em Portugal.",
-    "lead": "Prisma Fleet é o software que substitui as folhas de Excel, elimina erros de cálculo e dá aos seus motoristas um portal com o extrato deles.",
-    "viewFeatures": "Ver funcionalidades",
-    "viewPricing": "Ver preços",
-    "startTrial": "Começar trial gratuito"
-  },
   "Hero": {
-    "factA": "Feito para operadores TVDE em Portugal",
-    "factB": "Renda fixa ou revenue share",
-    "factC": "Importação Uber, Bolt, Via Verde e Prio",
-    "propImportTitle": "Importação automática",
-    "propImportDesc": "Arraste ficheiros Uber, Bolt, Via Verde e Prio. O resto é automático.",
-    "propZeroErrTitle": "Zero erros de cálculo",
-    "propZeroErrDesc": "Renda fixa ou revenue share. Todos os descontos aplicados sem falhas.",
-    "propPortalTitle": "Portal do motorista",
-    "propPortalDesc": "Cada motorista vê o seu extrato. Sem telefonemas, sem confusão.",
-    "screenshotPill": "Dashboard semanal",
-    "soonLabel": "Em breve",
-    "soonSub": "Demo do dashboard em vídeo"
-  },
-  "ProofStrip": {
-    "label": "Feito para a rotina real de operadores TVDE em Portugal",
-    "items": [
-      "Liquidações automáticas",
-      "Importação CSV e XLSX",
-      "SEPA XML",
-      "Portal do motorista",
-      "Analytics da frota",
-      "Renda fixa ou revenue share",
-      "Exportação PDF",
-      "Manutenção e inspeções"
-    ],
-    "aria": "Integrações e fluxos suportados"
+    "chip": "Feito para operadores TVDE em Portugal",
+    "titleA": "Pare de gerir a sua frota numa",
+    "titleStrike": "folha de cálculo",
+    "titleEnd": ".",
+    "leadStrong": "Liquidações em minutos. Não em horas.",
+    "lead": "Importe os ganhos da Uber e da Bolt, as portagens e o combustível, reveja cada acerto e pague toda a frota com um único ficheiro SEPA.",
+    "ctaPrimary": "Agendar demonstração",
+    "ctaSecondary": "Ver como funciona",
+    "mockAlt": "Ecrã de Pagamentos do Prisma Fleet com as liquidações semanais de 24 motoristas: ganhos Uber e Bolt, renda, combustível, Via Verde e valor líquido."
   },
   "ClientsStrip": {
     "aria": "Os nossos clientes",
-    "labelPrefix": "MAIS DE",
-    "labelHighlight": "300 CARROS",
-    "labelSuffix": "EM PORTUGAL JÁ SÃO GERIDOS ATRAVÉS DA PRISMA FLEET",
+    "label": "Mais de <b>300 viaturas</b> em Portugal já são geridas com Prisma Fleet",
     "openSite": "Abrir site de {name} numa nova janela"
   },
-  "IntegrationStrip": {
-    "aria": "Integrações suportadas",
-    "label": "Integrações com as plataformas que já utiliza",
-    "openSite": "Abrir site de {name} numa nova janela"
-  },
-  "Pain": {
-    "eyebrow": "O problema",
-    "titleA": "Gerir uma frota TVDE não",
-    "titleB": "devia depender de Excel",
-    "lead": "Operadores perdem horas todas as semanas em tarefas que deviam ser automáticas. E os erros saem caros.",
-    "card1Stat": "4h+",
-    "card1Title": "Perdidas em Excel por semana",
-    "card1Desc": "Copiar dados, calcular descontos, verificar valores. Todas as semanas, a mesma rotina manual.",
-    "card2Stat": "23%",
-    "card2Title": "Liquidações com erros",
-    "card2Desc": "Fórmulas partidas, linhas trocadas, combustível esquecido. Erros que custam dinheiro.",
-    "card3Stat": "0",
-    "card3Title": "Visibilidade para motoristas",
-    "card3Desc": "Os motoristas ligam a perguntar quanto vão receber. Sem portal, sem transparência."
-  },
-  "Features": {
-    "eyebrow": "Funcionalidades",
-    "titleA": "Uma plataforma para",
-    "titleB": "operar a sua frota ponta a ponta",
-    "lead": "Do import ao pagamento, uma plataforma completa para operadores TVDE. Sem Excel, sem erros, sem stress.",
-    "soon": "Em breve",
-    "card1Title": "Liquidações automáticas",
-    "card1Desc": "Importe os ganhos, aplique renda, combustível, Via Verde e deduções. O cálculo é instantâneo. Renda fixa ou revenue share.",
-    "card2Title": "Importação inteligente",
-    "card2Desc": "Arraste ficheiros CSV ou XLSX. O parser reconhece as colunas automaticamente e mapeia tudo ao motorista certo.",
-    "card3Title": "Portal do motorista",
-    "card3Desc": "Cada motorista tem acesso ao seu próprio portal. Vê ganhos, deduções e valor final. Sem telefonemas.",
-    "card4Title": "Dashboard com KPIs",
-    "card4Desc": "Receita total, veículos ativos, taxa de ocupação e performance por motorista. Tudo num só lugar.",
-    "extra1Title": "Pagamentos SEPA.",
-    "extra1Desc": "Gere ficheiros SEPA XML prontos para o banco.",
-    "extra2Title": "Exportação PDF.",
-    "extra2Desc": "Relatórios semanais para cada motorista.",
-    "extra3Title": "Multi-empresa.",
-    "extra3Desc": "Gira até 5 empresas com uma só conta.",
-    "extra4Title": "CRM integrado.",
-    "extra4Desc": "Gira leads e acompanhe potenciais motoristas.",
-    "extra5Title": "Manutenção.",
-    "extra5Desc": "Registe revisões, seguros e inspeções.",
-    "extra6Title": "Analytics avançado.",
-    "extra6Desc": "Fleet Score e tendências semanais."
-  },
-  "Workflow": {
+  "HowItWorks": {
     "eyebrow": "Como funciona",
-    "titleA": "De ficheiro a pagamento",
-    "titleB": "num fluxo de 4 passos",
-    "lead": "Um fluxo simples que substitui horas de trabalho manual. Todas as semanas, sem falhas.",
-    "step1Title": "Importe",
-    "step1Desc": "Arraste os ficheiros do Uber, Bolt, Via Verde e Prio para a plataforma.",
-    "step2Title": "Calcule",
-    "step2Desc": "O sistema gera as liquidações automaticamente com todos os descontos.",
-    "step3Title": "Aprove",
-    "step3Desc": "Revise os valores, ajuste o que for preciso e aprove cada liquidação.",
-    "step4Title": "Pague",
-    "step4Desc": "Gere o ficheiro SEPA, envie para o banco e marque como pago."
+    "titleA": "Do ficheiro ao pagamento em três passos.",
+    "titleB": "O mesmo fluxo todas as semanas, sem fórmulas partidas.",
+    "step1Kicker": "01 · Importar Dados",
+    "step1Title": "Os dados chegam sozinhos",
+    "step1Desc": "A Bolt sincroniza pela API oficial e o relatório semanal da Uber é obtido automaticamente. Via Verde e Prio entram com um arrastar e largar, já associados a cada motorista.",
+    "step2Kicker": "02 · Rever e Confirmar",
+    "step2Title": "Cada acerto calculado ao cêntimo",
+    "step2Desc": "Renda fixa ou partilha de receita, combustível, portagens, WiFi, caução e dívidas transitadas. Reveja, ajuste e aprove com o recibo de cada motorista à vista.",
+    "step3Kicker": "03 · Pagamento",
+    "step3Title": "Um ficheiro SEPA para toda a frota",
+    "step3Desc": "Gere o ficheiro SEPA XML, carregue-o no seu banco e marque a semana como paga. Motoristas sem IBAN ficam assinalados antes de o pagamento falhar."
+  },
+  "BeforeAfter": {
+    "eyebrow": "Antes e depois",
+    "titleA": "A segunda-feira do operador.",
+    "titleB": "Quatro horas a calcular o que já devia estar feito.",
+    "beforeLabel": "Antes",
+    "beforeTitle": "Com folhas de cálculo",
+    "beforeRows": [
+      {
+        "time": "09:00",
+        "label": "Exportar relatórios Uber e Bolt",
+        "value": "25min"
+      },
+      {
+        "time": "09:25",
+        "label": "Cruzar motoristas e viaturas",
+        "value": "45min"
+      },
+      {
+        "time": "10:10",
+        "label": "Calcular rendas, combustível e portagens",
+        "value": "1h 20min"
+      },
+      {
+        "time": "11:30",
+        "label": "Responder a mensagens sobre valores",
+        "value": "40min"
+      },
+      {
+        "time": "12:10",
+        "label": "Lançar transferências no banco, uma a uma",
+        "value": "50min"
+      }
+    ],
+    "total": "Total",
+    "beforeNote": "Exemplo ilustrativo de uma segunda-feira típica.",
+    "afterLabel": "Depois",
+    "afterTitle": "Com Prisma Fleet",
+    "afterRows": [
+      {
+        "label": "Uber e Bolt sincronizados",
+        "value": "Automático"
+      },
+      {
+        "label": "Via Verde e Prio importados",
+        "value": "Arrastar e largar"
+      },
+      {
+        "label": "Acertos calculados e revistos",
+        "value": "Um só ecrã"
+      },
+      {
+        "label": "Pagamento a toda a frota",
+        "value": "1 ficheiro SEPA"
+      },
+      {
+        "label": "Motoristas informados",
+        "value": "Portal próprio"
+      }
+    ],
+    "afterTotal": "Minutos",
+    "afterNote": "O tempo depende do tamanho da frota e da revisão que fizer."
+  },
+  "Modules": {
+    "eyebrow": "Produto",
+    "titleA": "Uma plataforma para toda a operação.",
+    "titleB": "Viaturas, motoristas, dinheiro e conformidade no mesmo sítio.",
+    "lead": "O que hoje vive em folhas de cálculo, grupos de WhatsApp e no homebanking passa a ter um único registo, com histórico completo.",
+    "dashboardTitle": "Dashboard e Pontuação de Saúde da Frota",
+    "dashboardDesc": "Utilização, acertos e conformidade numa só pontuação, ao lado dos indicadores que contam: motoristas ativos, carros alugados e receita semanal.",
+    "portalTitle": "Portal do motorista",
+    "portalDesc": "Cada motorista vê os ganhos, as deduções e o valor líquido da semana, as últimas quatro semanas e o acumulado anual. Sem mensagens a perguntar quanto vai receber.",
+    "vehiclesTitle": "Motoristas e viaturas",
+    "vehiclesDesc": "Atribuições, rendas semanais, inspeções, seguros e o estado de cada viatura. Saiba o que cada carro e cada motorista realmente rende.",
+    "companiesTitle": "Multi-empresa e CIVA Art. 53",
+    "companiesDesc": "Gira até 5 entidades legais com um só acesso e troque entre elas num clique. O monitor CIVA Art. 53 acompanha os ganhos face ao limite de isenção de €15 500.",
+    "checkinTitle": "Check In / Out",
+    "checkinDesc": "Entregas e devoluções de viaturas registadas.",
+    "cardsTitle": "Cartões",
+    "cardsDesc": "Cartões de combustível e WiFi atribuídos a cada motorista.",
+    "maintenanceTitle": "Manutenção",
+    "maintenanceDesc": "Revisões, reparações e viaturas em manutenção.",
+    "insuranceTitle": "Seguros",
+    "insuranceDesc": "Apólices e datas de renovação sob controlo.",
+    "reportsTitle": "Relatórios PDF",
+    "reportsDesc": "Documentos para motoristas, contabilista ou arquivo.",
+    "crmTitle": "CRM / Leads",
+    "crmDesc": "Recrutamento de motoristas, do primeiro contacto à atribuição."
+  },
+  "Stats": {
+    "aria": "Prisma Fleet em números",
+    "items": [
+      {
+        "value": "4",
+        "label": "Fontes de dados ligadas: Uber, Bolt, Via Verde e Prio"
+      },
+      {
+        "value": "1",
+        "label": "Ficheiro SEPA para pagar a frota inteira"
+      },
+      {
+        "value": "5",
+        "label": "Empresas geridas com um só acesso"
+      },
+      {
+        "value": "39.615",
+        "label": "Motoristas TVDE ativos em Portugal",
+        "source": "Fonte: IMT"
+      }
+    ]
+  },
+  "Integrations": {
+    "eyebrow": "Integrações",
+    "titleA": "Ligado ao que já usa.",
+    "titleB": "Sem copiar e colar.",
+    "lead": "Ganhos, portagens e combustível entram diretamente no acerto de cada motorista. A sincronização semanal só se configura uma vez.",
+    "live": "Ativo",
+    "uberMethod": "Sincronização automática",
+    "uberDesc": "O relatório semanal de pagamentos é obtido por si. A sua palavra-passe Uber nunca é guardada.",
+    "boltMethod": "API oficial",
+    "boltDesc": "Ganhos e comissões sincronizados diretamente pela API da Bolt.",
+    "viaverdeMethod": "Importação de portagens",
+    "viaverdeDesc": "Cada portagem associada à viatura e ao motorista certos, semana a semana.",
+    "prioMethod": "Cartões de combustível",
+    "prioDesc": "Abastecimentos e carregamentos Prio descontados no acerto de cada motorista.",
+    "roadmap": "Em construção",
+    "roadmapNote": "Os cartões Galp, BP e Repsol estão em desenvolvimento."
   },
   "Pricing": {
     "eyebrow": "Preços",
-    "titleA": "Escolha o plano certo",
-    "titleB": "para a fase da sua frota",
-    "leadStart": "Todos os planos incluem um ",
-    "leadHighlight": "trial gratuito de 14 dias",
-    "leadEnd": ".",
-    "currency": "EUR",
-    "perMonth": "/ mês",
-    "soon": "Preços em breve",
-    "startTrial": "Começar trial",
+    "titleA": "Um plano para cada fase da frota.",
+    "titleB": "SEPA incluído em todos.",
+    "lead": "Todos os planos incluem 14 dias de experiência gratuita, sem cartão de crédito. O preço é ajustado ao número de viaturas.",
+    "popular": "Recomendado",
+    "onRequest": "Preço sob consulta",
+    "cta": "Agendar demonstração",
     "starterName": "Starter",
-    "starterDesc": "Para operadores com frotas até 30 veículos que querem sair do Excel.",
-    "starterLabel": "Plano Starter inclui:",
+    "starterFleet": "Até 30 viaturas",
+    "starterDesc": "Para operadores que querem sair das folhas de cálculo.",
+    "starterLabel": "Inclui",
     "starterFeatures": [
-      "Até 30 veículos",
       "Liquidações automáticas",
       "Importação Uber e Bolt",
+      "Pagamentos SEPA",
       "Portal do motorista",
       "Suporte por email"
     ],
     "proName": "Pro",
+    "proFleet": "Até 150 viaturas",
     "proDesc": "Para operadores em crescimento que precisam de controlo total.",
-    "proLabel": "Tudo do Starter, mais:",
+    "proLabel": "Tudo do Starter, mais",
     "proFeatures": [
-      "Até 150 veículos",
-      "Pagamentos SEPA",
-      "Dashboard analytics",
       "Via Verde e Prio",
-      "Multi-empresa",
+      "Dashboard e Pontuação de Saúde da Frota",
+      "Multi-empresa, até 5 NIF",
+      "Relatórios PDF",
       "Suporte prioritário"
     ],
     "enterpriseName": "Enterprise",
+    "enterpriseFleet": "Viaturas ilimitadas",
     "enterpriseDesc": "Para grandes operadores que precisam de infraestrutura dedicada.",
-    "enterpriseLabel": "Tudo do Pro, mais:",
+    "enterpriseLabel": "Tudo do Pro, mais",
     "enterpriseFeatures": [
-      "Veículos ilimitados",
-      "Instância dedicada",
       "Integração Bolt API",
+      "Instância dedicada",
       "Relatórios personalizados",
       "Onboarding dedicado",
       "SLA garantido"
-    ]
+    ],
+    "allPlans": "Em todos os planos",
+    "allPlansList": "14 dias grátis · Pagamentos SEPA · Sem fidelização · Dados isolados por operador"
   },
   "FAQ": {
-    "eyebrow": "F.A.Q",
-    "title": "Perguntas e respostas",
+    "eyebrow": "FAQ",
+    "title": "Perguntas frequentes",
+    "lead": "Não encontra a resposta que procura? Fale connosco e mostramos a plataforma com os dados da sua operação.",
+    "contact": "Falar com a equipa",
     "items": [
       {
         "q": "O Prisma Fleet é para mim?",
-        "a": "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O Prisma Fleet foi feito especificamente para si, quer tenha 5 ou 300 veículos."
+        "a": "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O Prisma Fleet foi feito especificamente para si, quer tenha 5 ou 300 viaturas."
       },
       {
         "q": "Posso experimentar sem pagar?",
-        "a": "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importa os seus dados reais e testa tudo antes de decidir."
+        "a": "Sim. Todos os planos incluem 14 dias de experiência gratuita, sem cartão de crédito. Pode importar os seus dados reais e testar tudo antes de decidir."
       },
       {
-        "q": "Como funciona a importação de dados?",
-        "a": "Exporte os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arraste para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos."
+        "q": "Como chegam os dados à plataforma?",
+        "a": "A Bolt sincroniza pela API oficial e o relatório semanal de pagamentos da Uber é obtido automaticamente, depois de uma configuração inicial. Os ficheiros da Via Verde e da Prio são importados com um arrastar e largar e associados aos motoristas certos."
       },
       {
-        "q": "Suportam renda fixa e revenue share?",
-        "a": "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Pode misturar renda fixa e percentagem na mesma frota."
+        "q": "Suportam renda fixa e partilha de receita?",
+        "a": "Sim. Cada atribuição motorista-viatura tem o seu próprio modelo de compensação, guardado no momento do acerto. Pode misturar renda fixa e percentagem na mesma frota."
       },
       {
         "q": "Os meus motoristas podem ver as liquidações?",
-        "a": "Sim. Cada motorista recebe acesso ao portal onde vê os ganhos, deduções e valor final de cada semana. Funciona em qualquer telemóvel."
+        "a": "Sim. Cada motorista tem acesso ao portal, onde vê os ganhos, as deduções e o valor final de cada semana. Funciona em qualquer telemóvel."
       },
       {
         "q": "E se tiver várias empresas?",
@@ -187,41 +242,143 @@
       },
       {
         "q": "Os meus dados estão seguros?",
-        "a": "Cada operador tem a sua própria instância isolada com base de dados dedicada. Os dados de um cliente nunca se misturam com os de outro."
+        "a": "Cada operador tem a sua própria instância isolada, com base de dados dedicada. Os dados de um cliente nunca se misturam com os de outro."
       },
       {
         "q": "Posso cancelar a qualquer momento?",
-        "a": "Sim. Sem contratos de fidelização. Cancele quando quiser e mantém acesso até ao fim do período pago."
+        "a": "Sim. Sem contratos de fidelização. Cancele quando quiser e mantém o acesso até ao fim do período pago."
       }
     ]
   },
   "CTA": {
-    "eyebrow": "Começar agora",
-    "titleA": "Deixe o Excel para trás",
-    "titleB": "e feche cada semana com controlo",
-    "lead": "Experimente o Prisma Fleet durante 14 dias sem compromisso. Sem cartão de crédito, sem complicações.",
-    "demo": "Pedir Demo",
-    "viewPricing": "Ver preços"
+    "titleA": "Feche a próxima semana em minutos.",
+    "titleB": "Mostramos-lhe como, com os dados da sua frota.",
+    "lead": "Uma demonstração adaptada ao tamanho da sua operação, sem compromisso. Respondemos no dia útil seguinte.",
+    "primary": "Agendar demonstração",
+    "secondary": "Enviar email"
   },
   "Footer": {
     "aria": "Rodapé do site",
+    "tagline": "Pare de gerir a sua frota numa folha de cálculo.",
     "product": "Produto",
     "features": "Funcionalidades",
-    "pricing": "Preços",
     "howItWorks": "Como funciona",
-    "resources": "Recursos",
-    "demo": "Pedir Demo",
+    "integrations": "Integrações",
+    "pricing": "Preços",
+    "company": "Empresa",
+    "demo": "Agendar demonstração",
+    "faq": "Perguntas frequentes",
     "legal": "Legal",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
-    "contact": "Contacto",
     "copy": "2026 Prisma Fleet",
     "parent": "Uma solução Prisma Solutions"
   },
+  "Mock": {
+    "allFleets": "Todas as Frotas",
+    "status": {
+      "paid": "Pago",
+      "approved": "Recibo Aprovado",
+      "awaiting": "Aguarda Recibo",
+      "calculated": "Calculado",
+      "rented": "Alugado",
+      "available": "Disponível",
+      "repair": "Em manutenção"
+    },
+    "pipeline": {
+      "title": "Pagamentos",
+      "subtitle": "Fluxo Semanal",
+      "period": "Período de Acerto",
+      "step1": "Importar Dados",
+      "step1Sub": "Carregar ganhos e deduções",
+      "step2": "Rever e Confirmar",
+      "step2Sub": "Validar acertos",
+      "step3": "Pagamento",
+      "step3Sub": "SEPA e transferências",
+      "gross": "Bruto",
+      "deductions": "Deduções",
+      "net": "Líquido",
+      "average": "Média por motorista",
+      "weekly": "Semanal ({n})",
+      "finals": "Acertos finais ({n})",
+      "approveSend": "Aprovar e Enviar",
+      "colDriver": "Motorista",
+      "colGross": "Bruto",
+      "colRent": "Renda",
+      "colFuel": "Combustível",
+      "colNet": "Líquido",
+      "colStatus": "Estado",
+      "share": "Partilha 30%"
+    },
+    "import": {
+      "imported": "{n} importados",
+      "rows": "{n} linhas importadas",
+      "auto": "Sincronização automática",
+      "api": "API oficial",
+      "file": "Arrastar e largar",
+      "building": "Em construção"
+    },
+    "receipt": {
+      "title": "Recibo de Acerto Semanal",
+      "week": "Semana 39",
+      "uber": "Ganhos Uber",
+      "bolt": "Ganhos Bolt",
+      "gross": "Ganhos brutos",
+      "rent": "Renda semanal",
+      "fuel": "Combustível",
+      "totalDed": "Total de deduções",
+      "net": "Líquido a pagar",
+      "fixed": "Renda fixa",
+      "share": "Partilha"
+    },
+    "sepa": {
+      "ready": "Pronto a Pagar",
+      "selected": "{n} selecionados",
+      "colDriver": "Motorista",
+      "colTransfer": "A transferir",
+      "noIban": "SEM IBAN",
+      "download": "Descarregar SEPA XML ({n})",
+      "markPaid": "Marcar {n} como Pagos",
+      "generated": "SEPA XML gerado",
+      "transfers": "{n} transferências"
+    },
+    "dashboard": {
+      "health": "Saúde da Frota",
+      "utilisation": "Utilização",
+      "settlements": "Acertos",
+      "compliance": "Conformidade",
+      "activeDrivers": "Motoristas Ativos",
+      "carsRented": "Carros Alugados",
+      "weeklyRevenue": "Receita Semanal",
+      "toSettle": "Por Acertar",
+      "ofTotal": "de {n} total",
+      "available": "{n} disponíveis",
+      "rentalIncome": "receita de aluguer",
+      "pending": "pendente"
+    },
+    "portal": {
+      "hello": "Olá, Ana",
+      "thisWeek": "Esta Semana",
+      "net": "Valor Líquido",
+      "gross": "Ganhos Brutos",
+      "deductions": "Total de Deduções",
+      "last4": "Últimas 4 Semanas"
+    },
+    "vehicles": {
+      "perWeek": "/semana"
+    },
+    "companies": {
+      "all": "Todas as Frotas",
+      "cars": "{n} viaturas",
+      "civa": "Monitor CIVA Art. 53",
+      "approaching": "A aproximar",
+      "of": "de"
+    }
+  },
   "DemoPage": {
-    "eyebrow": "Pedir demonstração",
+    "eyebrow": "Agendar demonstração",
     "titleA": "Veja o Prisma Fleet",
-    "titleB": "em ação",
+    "titleB": "com os dados da sua frota.",
     "lead": "Preencha o formulário e agendamos uma demonstração personalizada para a sua operação. Sem compromisso, sem cartão de crédito.",
     "benefit1Title": "Resposta em menos de 24 horas",
     "benefit1Desc": "A equipa entra em contacto consigo no dia útil seguinte.",
@@ -247,7 +404,7 @@
     "fleet4": "Mais de 100 veículos",
     "message": "Mensagem (opcional)",
     "messagePlaceholder": "Conte-nos sobre a sua operação...",
-    "submit": "Pedir Demo",
+    "submit": "Agendar demonstração",
     "sending": "A enviar...",
     "sent": "Pedido enviado. Entramos em contacto em breve.",
     "error": "Erro ao enviar. Tente novamente ou contacte-nos diretamente."

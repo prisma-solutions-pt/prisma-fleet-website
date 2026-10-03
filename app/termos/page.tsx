@@ -19,8 +19,8 @@ export default async function TermosPage() {
     <>
       <Navbar />
       <main>
-        <section className="section" style={{ paddingTop: "160px" }}>
-          <div className="wrap" style={{ maxWidth: "760px" }}>
+        <section className="legal">
+          <div className="container legal-inner">
             <h1>{t("title")}</h1>
             <p className="legal-updated">{t("updated")}</p>
 

@@ -5,34 +5,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Logo from "./Logo";
+
+const LINKS = [
+  { href: "/#produto", key: "product" },
+  { href: "/#como-funciona", key: "howItWorks" },
+  { href: "/#integracoes", key: "integrations" },
+  { href: "/#precos", key: "pricing" },
+  { href: "/#faq", key: "faq" },
+] as const;
 
 export default function Navbar() {
   const pathname = usePathname();
   const t = useTranslations("Navbar");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isHome = pathname === "/";
-  const logoMarkSrc = "/brand/prisma-mark-white.png";
 
   useEffect(() => {
-    if (!isHome) {
-      setScrolled(true);
-      return;
-    }
-
-    const onScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 4);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, [isHome]);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -40,70 +34,52 @@ export default function Navbar() {
 
   return (
     <header
-      className={`navbar${scrolled || !isHome ? " navbar-scrolled" : ""}${
-        mobileOpen ? " navbar-open" : ""
-      }`}
+      className={`nav${scrolled ? " nav-scrolled" : ""}${mobileOpen ? " nav-open" : ""}`}
     >
-      <div className="navbar-shell">
-        <div className="navbar-inner">
-          <Link href="/" className="nav-logo">
-            <img src={logoMarkSrc} alt="Prisma Fleet" className="nav-logo-mark" />
-            Prisma Fleet
-          </Link>
+      <div className="nav-inner container">
+        <Link href="/" className="nav-logo">
+          <Logo />
+        </Link>
 
-          <div className="nav-links">
-            <Link href="/#funcionalidades" className="nav-link">
-              {t("features")}
+        <nav className="nav-links" aria-label={t("aria")}>
+          {LINKS.map((l) => (
+            <Link key={l.key} href={l.href} className="nav-link">
+              {t(l.key)}
             </Link>
-            <Link href="/#como-funciona" className="nav-link">
-              {t("howItWorks")}
-            </Link>
-            <Link href="/#clientes" className="nav-link">
-              {t("clients")}
-            </Link>
-            <Link href="/#precos" className="nav-link">
-              {t("pricing")}
-            </Link>
-          </div>
+          ))}
+        </nav>
 
-          <div className="nav-actions">
-            <LanguageSwitcher />
-            <Link href="/demo" className="btn btn-primary btn-arrow">
-              {t("demo")}
-            </Link>
-            <button
-              type="button"
-              className={`nav-burger${mobileOpen ? " open" : ""}`}
-              onClick={() => setMobileOpen((open) => !open)}
-              aria-label={t("openMenu")}
-              aria-expanded={mobileOpen}
-            >
-              <span />
-              <span />
-              <span />
-            </button>
-          </div>
-        </div>
-
-        <div className={`nav-mobile${mobileOpen ? " open" : ""}`}>
-          <Link href="/#funcionalidades" className="nav-mobile-link">
-            {t("features")}
-          </Link>
-          <Link href="/#como-funciona" className="nav-mobile-link">
-            {t("howItWorks")}
-          </Link>
-          <Link href="/#clientes" className="nav-mobile-link">
-            {t("clients")}
-          </Link>
-          <Link href="/#precos" className="nav-mobile-link">
-            {t("pricing")}
-          </Link>
-          <div className="nav-mobile-lang">
-            <LanguageSwitcher />
-          </div>
-          <Link href="/demo" className="btn btn-primary btn-arrow nav-mobile-cta">
+        <div className="nav-actions">
+          <LanguageSwitcher />
+          <Link href="/demo" className="btn btn-primary btn-sm nav-cta">
             {t("demo")}
           </Link>
+          <button
+            type="button"
+            className="nav-burger"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label={t("openMenu")}
+            aria-expanded={mobileOpen}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
+
+      <div className="nav-mobile">
+        <div className="container">
+          {LINKS.map((l) => (
+            <Link key={l.key} href={l.href} className="nav-mobile-link">
+              {t(l.key)}
+            </Link>
+          ))}
+          <div className="nav-mobile-foot">
+            <LanguageSwitcher />
+            <Link href="/demo" className="btn btn-primary">
+              {t("demo")}
+            </Link>
+          </div>
         </div>
       </div>
     </header>

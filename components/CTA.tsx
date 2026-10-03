@@ -6,28 +6,25 @@ export default function CTA() {
   const t = useTranslations("CTA");
 
   return (
-    <section className="section">
-      <ScrollReveal>
-        <div className="cta-dark">
-          <div className="cta-dark-inner">
-            <span className="eyebrow eyebrow-dark">{t("eyebrow")}</span>
+    <section className="cta">
+      <div className="container">
+        <ScrollReveal>
+          <div className="cta-inner">
             <h2>
-              {t("titleA")}
-              <br />
-              <span className="accent-light">{t("titleB")}</span>
+              {t("titleA")} <span className="muted">{t("titleB")}</span>
             </h2>
-            <p className="lead-center">{t("lead")}</p>
+            <p>{t("lead")}</p>
             <div className="cta-actions">
-              <Link href="/demo" className="btn btn-primary btn-arrow">
-                {t("demo")}
+              <Link href="/demo" className="btn btn-primary btn-lg">
+                {t("primary")}
               </Link>
-              <a href="#precos" className="btn btn-ghost-dark">
-                {t("viewPricing")}
+              <a href="mailto:geral@prismasolutions.pt" className="btn btn-ghost-light btn-lg">
+                {t("secondary")}
               </a>
             </div>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </div>
     </section>
   );
 }

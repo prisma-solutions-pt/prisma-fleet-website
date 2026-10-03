@@ -36,7 +36,7 @@ export default function DemoForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="demo-form-wrap">
+    <form onSubmit={handleSubmit} className="demo-form">
       <div className="form-group">
         <label htmlFor="name" className="form-label">{t("name")}</label>
         <input
@@ -108,9 +108,8 @@ export default function DemoForm() {
 
       <button
         type="submit"
-        className="btn btn-primary btn-arrow"
+        className="btn btn-primary btn-lg btn-block"
         disabled={status === "sending"}
-        style={{ width: "100%", justifyContent: "center" }}
       >
         {status === "sending" ? t("sending") : t("submit")}
       </button>

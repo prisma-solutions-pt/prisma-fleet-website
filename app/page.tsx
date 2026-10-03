@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import VideoHero from "@/components/VideoHero";
 import Hero from "@/components/Hero";
-import ProofStrip from "@/components/ProofStrip";
-import Pain from "@/components/Pain";
-import Features from "@/components/Features";
-import Workflow from "@/components/Workflow";
+import ClientsStrip from "@/components/ClientsStrip";
+import HowItWorks from "@/components/HowItWorks";
+import BeforeAfter from "@/components/BeforeAfter";
+import Modules from "@/components/Modules";
+import Stats from "@/components/Stats";
+import Integrations from "@/components/Integrations";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import IntegrationStrip from "@/components/IntegrationStrip";
-import ClientsStrip from "@/components/ClientsStrip";
 import Footer from "@/components/Footer";
+import pt from "@/messages/pt.json";
 
 export const metadata: Metadata = {
   title: "Prisma Fleet | Software de Gestão de Frotas TVDE em Portugal",
@@ -80,75 +80,15 @@ const softwareJsonLd = {
   },
 };
 
+// Built from the PT strings (the default locale) so the structured data matches the visible FAQ.
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "O Prisma Fleet é para mim?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Se é operador TVDE em Portugal e aluga carros a motoristas Uber ou Bolt, sim. O Prisma Fleet foi feito especificamente para si, quer tenha 5 ou 300 veículos.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso experimentar sem pagar?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Todos os planos incluem 14 dias de trial gratuito, sem cartão de crédito. Importa os seus dados reais e testa tudo antes de decidir.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Como funciona a importação de dados?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Exporte os ficheiros CSV do Uber e Bolt e os XLSX da Via Verde e Prio. Arraste para a plataforma e o parser mapeia tudo automaticamente aos motoristas certos.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Suportam renda fixa e revenue share?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Cada atribuição motorista-veículo pode ter o seu próprio modelo de compensação. Pode misturar renda fixa e percentagem na mesma frota.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Os meus motoristas podem ver as liquidações?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Cada motorista recebe acesso ao portal onde vê os ganhos, deduções e valor final de cada semana. Funciona em qualquer telemóvel.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "E se tiver várias empresas?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "O Prisma Fleet suporta multi-empresa. Gira até 5 entidades legais dentro da mesma conta, com troca rápida entre elas.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Os meus dados estão seguros?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Cada operador tem a sua própria instância isolada com base de dados dedicada. Os dados de um cliente nunca se misturam com os de outro.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso cancelar a qualquer momento?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Sem contratos de fidelização. Cancele quando quiser e mantém acesso até ao fim do período pago.",
-      },
-    },
-  ],
+  mainEntity: pt.FAQ.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function Home() {
@@ -168,15 +108,14 @@ export default function Home() {
       />
       <Navbar />
       <main>
-        <VideoHero />
         <Hero />
         <ClientsStrip />
-        <Pain />
-        <Features />
-        <ProofStrip />
-        <Workflow />
+        <HowItWorks />
+        <BeforeAfter />
+        <Modules />
+        <Stats />
+        <Integrations />
         <Pricing />
-        <IntegrationStrip />
         <FAQ />
         <CTA />
       </main>

@@ -50,11 +50,7 @@ export default function CookieBanner() {
       if (e.key === "Escape") save(prefs);
     };
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
+    return () => document.removeEventListener("keydown", onKey);
   }, [open, prefs]);
 
   function save(next: Prefs) {
@@ -77,19 +73,11 @@ export default function CookieBanner() {
   if (!open) return null;
 
   return (
-    <div className="cc-backdrop" role="dialog" aria-modal="true" aria-labelledby="cc-title">
+    <div className="cc-backdrop" role="dialog" aria-modal="false" aria-labelledby="cc-title">
       <div className="cc-modal">
         {view === "summary" ? (
           <>
             <div className="cc-head">
-              <div className="cc-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"/>
-                  <circle cx="8.5" cy="8.5" r="0.6" fill="currentColor"/>
-                  <circle cx="15.5" cy="12.5" r="0.6" fill="currentColor"/>
-                  <circle cx="10" cy="15.5" r="0.6" fill="currentColor"/>
-                </svg>
-              </div>
               <h2 id="cc-title" className="cc-title">{t("title")}</h2>
             </div>
 

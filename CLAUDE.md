@@ -1,8 +1,8 @@
 @AGENTS.md
 
 # PrismaFleet Product Website -- Project Context
-**Last updated:** 13 April 2026
-**Stack:** Next.js 16 (App Router) + TypeScript + Global CSS + simplex-noise
+**Last updated:** 3 October 2026
+**Stack:** Next.js 16 (App Router) + TypeScript + Global CSS + next-intl + Supabase + Resend + PostHog
 **Domain:** prismafleet.pt
 
 ---
@@ -17,25 +17,21 @@ Standalone product website for Prisma Fleet, the fleet management SaaS for Portu
 
 ## Design System
 
-ToDesktop.com-inspired layout with the Fleet app's palette. Video hero, dark wave section, light body.
+Professional product-software look (references: Attio, Stripe, ServiceNow, Grok in `design inspiration/`). The product UI carries the page: hand-built HTML/CSS recreations of real Fleet app screens in `components/mocks/`, not screenshots. Brand rules come from the Fleet app brief (`../Prisma Fleet Application/marketing material/CLAUDE_DESIGN_ONBOARDING.md`).
 
-**Design reference:** ToDesktop.com (floating pill navbar that appears on scroll, 2x2 feature cards with screenshots, dark featured pricing card, 2-col FAQ, clean 4-col footer, dark CTA container)
-
-**Video Hero:** Full-viewport background video (dusk city driving) with dark overlay, left-aligned text
-**Wave Section:** Dark (#0a0f1a) with Waves canvas animation, fact pills, feature prop cards, screenshot frame
-**Body:** Light, using Fleet light-mode palette
+**Layout:** sticky white navbar, centered hero with the product mock, light sections, navy bands (modules, CTA, footer)
+**Hero line:** "Pare de gerir a sua frota numa ~~folha de cálculo~~." (blue strikethrough draws on load) + tagline "Liquidações em minutos. Não em horas."
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| --bg | #f8fafc | Page background |
-| --surface | #ffffff | Card backgrounds |
-| --surface2 | #f1f5f9 | Feature card backgrounds |
-| --accent | #2563eb | Primary blue (Fleet accent) |
-| --ink | #0d1b2a | Primary text |
-| --ink2 | #334155 | Secondary text |
-| --dark-bg | #0a0f1a | Hero / CTA background |
+| --bg / --bg-subtle | #ffffff / #f6f8fb | Page / alternate sections |
+| --ink / --ink-3 | #0d1b2a / #64748b | Text / muted second half of two-tone headlines |
+| --accent | #2563eb | All CTAs and links |
+| --navy / --navy-2 | #0d1b2a / #1e3a5f | Dark bands, wordmark |
+| --navy-gradient | #0a0f1a to #243b5c | Signature navy hero gradient |
+| --pos / --neg | #00c07a / #d23c3c | Data only (Pago, deductions); Uber green / Bolt yellow only in partner contexts |
 
-**Fonts:** Source Sans 3 (body), JetBrains Mono (eyebrows, numbers)
+**Fonts:** Source Sans 3 (body and headlines, sentence case), JetBrains Mono (labels, money, eyebrows), Bebas Neue (inside app mocks and stat numerals only), Oswald (wordmark "PRISMA" only)
 **Curves:** `--spring` (elastic), `--cinema` (smooth decel), `--smooth` (standard ease)
 
 ---
@@ -46,10 +42,9 @@ ToDesktop.com-inspired layout with the Fleet app's palette. Video hero, dark wav
 2. All styles in `globals.css`. No CSS Modules, no Tailwind
 3. Formal Portuguese copy (pt-PT, "você" register, not "tu"). i18n with EN translation is wired via next-intl (cookie-based, default PT)
 4. Animations are functional, not decorative
-5. Screenshot placeholders use styled "Em breve" cards, ready to be swapped for real images
-6. Video hero fades seamlessly into dark wave section, then into light body
-7. Navbar is hidden during video hero, slides in on scroll (like Prisma Solutions site)
-8. No em dashes in user-facing copy or metadata. Use "|" or ":" as separators
+5. Only claim what the product does today: Uber (automatic weekly CSV sync) and Bolt (official API), Via Verde and Prio imports are live; Galp, BP and Repsol are "Em construção"; no invented stats (cite IMT for market figures)
+6. Mock data in `components/mocks/data.ts` is illustrative and internally consistent (net = gross - deductions); keep it that way when editing
+7. No em dashes in user-facing copy or metadata. Use "|" or ":" as separators
 
 ---
 
@@ -57,9 +52,12 @@ ToDesktop.com-inspired layout with the Fleet app's palette. Video hero, dark wav
 
 ```
 prismafleet.pt/
-├── /           Homepage (VideoHero, Hero/Waves, ProofStrip, Pain, Features, Workflow, Pricing, FAQ, CTA, Footer)
-├── /demo       Demo request form + info sidebar
-└── /api/demo   POST endpoint (TODO: wire Resend)
+├── /             Homepage (Hero, ClientsStrip, HowItWorks, BeforeAfter, Modules, Stats, Integrations, Pricing, FAQ, CTA, Footer)
+├── /demo         Demo request form + benefits
+├── /privacidade  Privacy policy
+├── /termos       Terms of service
+├── /admin        Password-protected leads + PostHog dashboard (proxy.ts guards it)
+└── /api/demo     POST endpoint: Supabase `leads` insert + Resend notification
 ```
 
 ---
@@ -67,41 +65,26 @@ prismafleet.pt/
 ## Key Files
 
 ```
-i18n/
-  request.ts          next-intl config (cookie-based, default "pt", supports "en")
-messages/
-  pt.json             Portuguese strings (default)
-  en.json             English strings
-lib/
-  locale-actions.ts   Server Action `setLocale` writes NEXT_LOCALE cookie
-app/
-  layout.tsx          Root layout (Source Sans 3 + JetBrains Mono, Organization JSON-LD, NextIntlClientProvider)
-  page.tsx            Homepage composing all sections (SoftwareApplication + FAQPage JSON-LD)
-  globals.css         ALL styles (~1700 lines)
-  sitemap.ts          Dynamic sitemap for / and /demo
-  robots.ts           Robots config (allow all, disallow /api/)
-  demo/page.tsx       Demo request page (rich SEO metadata + OG)
-  api/demo/route.ts   Form submission endpoint (placeholder)
+i18n/request.ts            next-intl config (cookie-based, default "pt", supports "en")
+messages/pt.json, en.json  All copy, including mock UI labels under "Mock"
+lib/locale-actions.ts      Server Action `setLocale` writes NEXT_LOCALE cookie
+app/layout.tsx             Fonts, Organization JSON-LD, providers, #sweep overlay
+app/page.tsx               Homepage; FAQPage JSON-LD is generated from messages/pt.json
+app/globals.css            ALL styles (site, mocks, cookie card, admin, sweep)
 components/
-  Navbar.tsx          Floating pill navbar (hidden by default, appears on scroll past video hero)
-  LanguageSwitcher.tsx EN/PT pill (sliding indicator, calls setLocale server action)
-  VideoHero.tsx       Full-viewport background video hero (left-aligned text, 3 CTAs)
-  Hero.tsx            Dark wave section with fact pills, 3 feature prop cards, screenshot frame
-  ProofStrip.tsx      Scrolling pill strip (integrations/features)
-  Pain.tsx            3 pain point cards (hours, errors, visibility)
-  Features.tsx        2x2 feature cards + full-width dashboard + 3x2 compact feature list
-  Workflow.tsx        4-step process (Importe > Calcule > Aprove > Pague)
-  Pricing.tsx         3 tiers (Starter, Pro, Enterprise), dark featured card
-  FAQ.tsx             2-column expandable FAQ (8 questions)
-  CTA.tsx             Dark rounded container CTA
-  Footer.tsx          4-column footer with links
-  DemoForm.tsx        Client-side form component
-  ScrollReveal.tsx    Intersection Observer scroll animation wrapper
-  Background.tsx      No-op (Waves is embedded in Hero directly)
-  ui/
-    wave-background.tsx  Interactive canvas wave animation (simplex-noise)
+  Navbar.tsx, Logo.tsx     Sticky nav; PRISMA/FLEET lockup (FLEET paths from the app's wordmark SVG)
+  Hero.tsx                 Headline + SettlementsMock with floating receipt and SEPA toast
+  HowItWorks.tsx           3-step pipeline (Importar, Rever e Confirmar, Pagamento) via PipelineTabs
+  PipelineTabs.tsx         Client tab list with auto-advance (paused on hover, off for reduced motion)
+  BeforeAfter.tsx          "A segunda-feira do operador" (illustrative timetable vs Prisma Fleet)
+  Modules.tsx              Navy band: 4 module cards with mocks + 6 compact modules
+  Stats.tsx, Integrations.tsx, Pricing.tsx, FAQ.tsx, CTA.tsx, Footer.tsx
+  CookieBanner.tsx         Non-blocking consent card (gates PostHog)
+  mocks/                   AppFrame (app shell), SettlementsMock, PipelineMocks, ModuleMocks, data.ts, app-icons.ts
 public/
-  hero-video.mp4      Compressed background video (1080p, ~1.8MB, no audio)
+  brand/                   Prisma marks (navy/white SVG from the app)
+  integrations/            Uber, Bolt, Via Verde, Prio logos
+  cars/                    Car thumbnails used in the vehicles mock
 ```
 
 ---
@@ -120,6 +103,6 @@ public/
 
 ## Pending
 
-**High:** Wire Resend for demo form emails | Add real Fleet app screenshots to replace "Em breve" placeholders | Add link from prismasolutions.pt to prismafleet.pt for SEO
+**High:** Set real pricing or keep "Preço sob consulta" | Add link from prismasolutions.pt to prismafleet.pt for SEO
 **Medium:** Mobile hamburger menu polish | OG image design | Submit to Google Search Console
-**Low:** Analytics (Plausible or similar) | LinkedIn company page for Prisma Fleet
+**Low:** LinkedIn company page for Prisma Fleet

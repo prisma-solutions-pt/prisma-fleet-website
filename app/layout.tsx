@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, JetBrains_Mono } from "next/font/google";
+import { Source_Sans_3, JetBrains_Mono, Bebas_Neue, Oswald } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
@@ -15,6 +15,22 @@ const sourceSans = Source_Sans_3({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
+  display: "swap",
+});
+
+// App display face: used inside the product mockups and for stat numerals, as in the Fleet app.
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
+  display: "swap",
+});
+
+// Wordmark only ("PRISMA" in the PRISMA / FLEET lockup).
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-oswald",
   display: "swap",
 });
 
@@ -101,7 +117,7 @@ export default async function RootLayout({
   return (
     <html
       lang={htmlLang}
-      className={`${sourceSans.variable} ${jetbrainsMono.variable}`}
+      className={`${sourceSans.variable} ${jetbrainsMono.variable} ${bebas.variable} ${oswald.variable}`}
     >
       <body>
         <script
